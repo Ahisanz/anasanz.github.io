@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,900;1,600;1,900");
+* {
+  font-family: "Roboto Condensed";
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none; }
+
+.header {
+  max-width: 1024px;
+  margin: 0 auto;
+  overflow: hidden; }
+  .header-text {
+    text-align: center; }
+    .header-text h1, .header-text h2 {
+      font-family: "Playfair Display"; }
+  .header-dev, .header-photo {
+    height: 250px;
+    width: 100%;
+    margin: 2rem auto;
+    position: relative;
+    background-position: center;
+    background-image: url("https://picsum.photos/1024/250?grayscale");
+    transition: all .4s;
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0); }
+    .header-dev a, .header-photo a {
+      display: block;
+      height: 100%;
+      width: auto;
+      margin: 0 auto; }
+    .header-dev h3, .header-photo h3 {
+      font-family: "Playfair Display";
+      color: #C1204A;
+      font-size: 1.5rem;
+      position: absolute;
+      bottom: 2rem;
+      transition: 0; }
+    .header-dev:hover, .header-photo:hover {
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+      background-image: url("https://picsum.photos/1024/250"); }
+      .header-dev:hover h3, .header-photo:hover h3 {
+        transform: rotateY(-180deg); }
+  .header-dev {
+    margin-left: 1rem; }
+    .header-dev h3 {
+      left: 2rem; }
+  .header-photo {
+    margin-right: 1rem; }
+    .header-photo h3 {
+      right: 2rem;
+      color: #BFB188; }
+
+@-webkit-keyframes flip-vertical-right {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0); }
+  100% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg); } }
+
+@keyframes flip-vertical-right {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0); }
+  100% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg); } }
