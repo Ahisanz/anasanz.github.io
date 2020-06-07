@@ -5,11 +5,13 @@ const pug = require('gulp-pug');
 const sourcemaps = require('gulp-sourcemaps');
 const browserify = require('browserify'); 
 const babelify = require('babelify'); 
+const rename = require('gulp-rename');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
 
-var jsFILES = 'src/js/**/*.js'
+var jsSRC = 'src/js/app.js';
+var jsFILES = [jsSRC];
 
 
 function css(cb) {
@@ -28,14 +30,14 @@ function html(cb) {
 };
 
 function js(cb) {
-    jsFILES.map(function( entry) {
+    jsFILES.map(function(entry) {
         return browserify({
             entries: [entry]
         })
-        .transform(babelify, { preset: ['env']})
+        .transform(babelify, { presets: ['@babel/preset-env']})
         .bundle()
         .pipe( source(entry) )
-        .pipe(rename({extname : 'min.js'}))
+        .pipe(rename({extname : '.min.js'}))
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps : true}))
         .pipe(uglify())
@@ -52,11 +54,11 @@ function images(cb) {
     cb();
 }
 
-function fonts(cb) {
-    gulp.src('src/fonts')
-    .pipe(gulp.dest('dest/fonts'))
-    cb();
-}
+// function fonts(cb) {
+//     gulp.src('src/fonts')
+//     .pipe(gulp.dest('dest/fonts'))
+//     cb();
+// }
 
 function watch_files() {
     gulp.watch('src/sass/app.scss', css)
@@ -73,6 +75,6 @@ gulp.task("css", css);
 gulp.task("html", html);
 gulp.task("js", js);
 gulp.task("images", images);
-gulp.task("fonts", fonts);
-gulp.task("default", gulp.parallel(css, html, js, images, fonts));
+// gulp.task("fonts", fonts);
+gulp.task("default", gulp.parallel(css, html, js, images));
 gulp.task("watch", watch_files);
