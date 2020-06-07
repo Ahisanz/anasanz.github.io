@@ -71,6 +71,36 @@
       -webkit-transform: rotateY(180deg);
       transform: rotateY(180deg) translateY(-10px); }
 
+.all-intro {
+  padding: 4rem 1rem 0;
+  margin: 0 auto; }
+  .all-intro .all-image {
+    position: relative; }
+    .all-intro .all-image .image-back {
+      height: 150px;
+      width: 220px;
+      border: 4px solid black;
+      top: 50%;
+      left: 10%;
+      transform: translate(0%, -50%);
+      position: absolute;
+      z-index: -1; }
+    .all-intro .all-image img {
+      transition: all .4s ease-in-out; }
+    .all-intro .all-image:hover img {
+      transform: translate(5%, 5%); }
+  .all-intro .all-text {
+    padding-top: 2rem;
+    text-align: center;
+    line-height: 1.2; }
+    .all-intro .all-text p {
+      padding-bottom: .5rem; }
+      .all-intro .all-text p.title {
+        font-family: "Roboto Condensed";
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #C1204A; }
+
 .main-intro {
   margin-top: 2rem;
   height: 700px;

@@ -70,7 +70,6 @@ $base-color: #BFB188;
             bottom : 2rem;
             transition: 0;
         }
-
         &:hover {
             -webkit-transform: rotateY(180deg) translateY(10px);
             transform: rotateY(180deg) translateY(10px);
@@ -97,7 +96,45 @@ $base-color: #BFB188;
             transform: rotateY(180deg) translateY(-10px);
         }
     }
+}
 
+// ALL INTRO BASICS
+.all-intro {
+    padding: 4rem 1rem 0;
+    margin: 0 auto;
+    .all-image {
+        position: relative;
+        .image-back {
+            height: 150px;
+            width: 220px;
+            border: 4px solid black;
+            top: 50%;
+            left: 10%;
+            transform: translate(0%, -50%);
+            position: absolute;
+            z-index: -1;
+        }
+        img {
+            transition: all .4s ease-in-out;
+        }
+        &:hover img {
+            transform: translate(5%, 5%);
+        }
+    }
+    .all-text {
+        padding-top: 2rem;
+        text-align: center;
+        line-height: 1.2;
+        p {
+            padding-bottom: .5rem;
+            &.title {
+                font-family: $roboto;
+                font-weight: 700;
+                font-size: 1.5rem;
+                color: $accent-color;
+            }
+        }
+    }
 }
 
 // MAIN ABOUT PHOTO AND DEV TRANSLATE
@@ -130,7 +167,5 @@ $base-color: #BFB188;
         }
     }
 }
-
-
 
 // ANIMATIONS

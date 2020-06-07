@@ -8,6 +8,12 @@ var introToggle = document.querySelectorAll('.intro-toggle');
 
 function changeClass(){
     event.preventDefault();
+
+    window.scrollTo({
+        top: 1500,
+        behavior: 'smooth',
+    });
+
     [].forEach.call(introToggle, function (el) {
         el.classList.remove('slide-on');
     });
