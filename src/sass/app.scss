@@ -17,6 +17,10 @@ $base-color: #BFB188;
   padding: 0;
   border: 0;
   list-style: none;
+  cursor: crosshair;
+ }
+ a {
+     cursor: pointer;
  }
 
 //  HEADER
@@ -26,9 +30,9 @@ $base-color: #BFB188;
     overflow: hidden;
     position: relative;
     &-back {
-        height: 579px;
+        height: 654px;
         width: 60%;
-        border: 4px solid black;
+        border: 8px solid black;
         position: absolute;
         top: 60%;
         left: 43%;
@@ -36,26 +40,39 @@ $base-color: #BFB188;
         transform: translate(-50%, -50%);
     }
     &-text {
-        margin: 2rem auto 5rem auto;
+        margin: 5rem auto;
         text-align: center;
         h1, h2 {
           font-family : $playfair;
           line-height: .9;
+          transition: all .2s ease-in-out;
+          cursor: crosshair;
         }
         h1 {
             font-size: 3rem;
+            &:hover {
+                font-size: 3.5rem;
+            }
         }
+        h2 {
+            &:hover {
+                font-size: 1.7rem;
+            }
+
+        }
+
     }
     &-dev,  &-photo {
         height: 250px;
         width: 90%;
-        margin: 2rem auto;
+        margin: 4rem auto;
         position: relative;
         background-position: center;
         background-image : url('https://picsum.photos/1024/250?grayscale');
         transition: all .7s;
-        -webkit-transform: rotateY(0) translateY(0);
-         transform: rotateY(0) translateY(0);
+        // -webkit-transform: rotateY(0) translateY(0);
+        //  transform: rotateY(0) translateY(0);
+        transform: scale(1);
         a {
             display: block;
             height: 100%;
@@ -65,35 +82,54 @@ $base-color: #BFB188;
         h3 {
             font-family: $playfair;
             color: $base-color;
-            font-size: 2rem;
+            font-size: 3.2rem;
+            text-align: center;
+            line-height: 0.8;
             position: absolute;
-            bottom : 2rem;
-            transition: 0;
+            // bottom : 2rem;
+            transition: all .4s ease-out;
+            opacity: 0;
+            transform: translateX(0);
         }
         &:hover {
-            -webkit-transform: rotateY(180deg) translateY(10px);
-            transform: rotateY(180deg) translateY(10px);
+            transform: scale(1.1);
+            // -webkit-transform: rotateY(180deg) translateY(10px);
+            // transform: rotateY(180deg) translateY(10px);
             background-image : url('https://picsum.photos/1024/250');
             h3 {
                 color: $accent-color;
-                transform: rotateY(-180deg);
+                // transform: rotateY(-180deg);
+                opacity: 1;
+                transform: translateX(30px)
             }
         }
     }
     &-dev {
         margin-left : 1rem;
         h3 {
-            left: 2rem;
+            bottom: -1rem;
+            left: -5rem;
+        }
+        &:hover {
+            h3 {
+                // margin-right: 2rem;
+            }
         }
     }
     &-photo { 
         margin-right : 1rem;
         h3 {
-            right: 2rem;
+            color: $base-color;
+            right: -1rem;
+            top: 6rem;
         }
         &:hover {
-            -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg) translateY(-10px);
+            h3 {
+                color: $base-color;
+                transform: translateX(-30px)
+            }
+            // -webkit-transform: rotateY(180deg);
+            // transform: rotateY(180deg) translateY(-10px);
         }
     }
 }
@@ -103,13 +139,14 @@ $base-color: #BFB188;
     padding: 4rem 1rem 0;
     margin: 0 auto;
     .all-image {
+        text-align: center;
         position: relative;
         .image-back {
             height: 150px;
-            width: 220px;
-            border: 4px solid black;
+            width: 94%;
+            border: 8px solid black;
             top: 50%;
-            left: 10%;
+            // left: 4%;
             transform: translate(0%, -50%);
             position: absolute;
             z-index: -1;
@@ -128,10 +165,11 @@ $base-color: #BFB188;
         p {
             padding-bottom: .5rem;
             &.title {
-                font-family: $roboto;
+                font-family: $playfair;
                 font-weight: 700;
-                font-size: 1.5rem;
-                color: $accent-color;
+                font-size: 2.5rem;
+                line-height: .8;
+                margin-bottom: 2rem;
             }
         }
     }
@@ -141,9 +179,58 @@ $base-color: #BFB188;
 .main {
     &-intro {
         margin-top: 2rem;
-        height: 700px;
+        height: 1100px;
         position: relative;
         overflow: hidden;
+
+        .intro-out {
+            padding: 1rem;
+        }
+        .intro-img {
+            text-align: right;
+            position: relative;
+        }
+        .intro-text {
+            line-height: 1.2;
+            padding-top: 1.5rem;
+            p{
+                padding-bottom: .5rem;
+                &.principal {
+                    font-size: 2.3rem;
+                    font-family: $playfair;
+                    line-height: .8;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+        .intro-back {
+            height: 150px;
+            width: 220px;
+            top: 50%;
+            right: 10%;
+            transform: translate(0%, -50%);
+            position: absolute;
+            z-index: -1;
+        }
+        .menu-sub {
+            margin: 2rem auto;
+            ul {
+                margin: 0 auto;
+            }
+            a {
+                font-family: $playfair;
+                text-align: center;
+                line-height: 2;
+                display: block;
+                text-decoration: none;
+                &.selected{
+                    color: $accent-color;
+                }
+            }
+            a#photo-sec.selected {
+                color: $base-color;
+            }
+        }
     }
     &-dev, &-photo {
         height: 700px;
@@ -153,19 +240,37 @@ $base-color: #BFB188;
     &-dev {
         // background-color: $accent-color;
         transform : translateX(-100%);
-        transition: .5s ease-in;
+        transition: .5s cubic-bezier(0.22, 0.61, 0.36, 1);
         &.slide-on {
             transform : translateX(0)   
+        }
+        .intro-back {
+            border: 8px solid $accent-color;
         }
     }
     &-photo {
         // background-color: $base-color;
         transform : translateX(100%);
-        transition: .5s ease-in;
+        transition: .5s cubic-bezier(0.22, 0.61, 0.36, 1);
         &.slide-on {
             transform : translateX(0)   
         }
+        .intro-img {
+            text-align: left;
+
+            .intro-back {
+                left: 10%;
+                right: auto;
+            }
+        }
+        .intro-text {
+            text-align: right;
+        }
+        .intro-back {
+            border: 8px solid $base-color;
+        }
     }
+
 }
 
 // ANIMATIONS

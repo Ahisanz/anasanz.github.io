@@ -19,44 +19,53 @@ html(lang="en")
                   h3 FrontEnd Developer              
             div.header-photo
                 a(href="#" id="photo-toggle")
-                    h3 Photographer/</br>Videomaker 
+                    h3 Photographer</br>Videomaker 
         main
             section.all-intro
                 div.all-image
                     div.image-back
                     img(src="https://picsum.photos/200/300", alt="")
                 div.all-text
-                    p Based in Palma de Mallorca, Spain
+                    p.title Live in Palma de Mallorca, Spain
                     p Self and quick learner, organized, versatile, curious and dedicated.
                     p Always searching for new technologies to learn and improve in design, frontend.
                     p Native brazilian portuguese, advanced english and spanish.
                     p College in Product Design at Belas Artes de São Paulo
 
             section.main-intro
+                nav#menu-sec.menu-sub
+                    ul
+                        li
+                            a(href='#' id='dev-sec' class="sec-menu selected") FrontEnd Developer
+                        li 
+                            a(href='#' id='photo-sec' class='sec-menu') Photographer/VideoMaker
+                    //- menu for toggle also photo and webdeveloper
                 section#dev-intro.intro-toggle.main-dev.slide-on
-                    div
-                        div
+                    div.intro-out
+                        div.intro-img
+                            div.intro-back
                             img(src="https://picsum.photos/200/300?grayscale", alt="")
-                        div
-                            p Work since 2011 in design agencies and advertising companies.
+                        div.intro-text
+                            p.principal Frontend Developer since 2013
 
-                            p Worked at the brazilian startup Mendelics for 2 years, 2013 and 2014, as graphic designer/art director and webdesigner/front-end.
+                            p Worked at the brazilian startup Mendelics for 2 years, 2013 and 2014, as graphic designer/art director and webdesigner/frontend developer.
 
                             p In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica.
 
                             p In April of 2019 moved to Palma de Mallorca where is now based, working as freelancer frontend.
 
-                            p From 2019 started to learn and develop with Vue.js
+                            p From 2019 started to learn and developing with Vue.js.
 
-                            p Languages: HTML/Pug, CSS/Sass, Vanilla JavaScript, Gulp, Git. Basic in: Python, Vue.js, MongoDB.
+                            p Languages: HTML/Pug, CSS/Sass, JavaScript, Gulp, Git. Basic in: Python, Vue.js, MongoDB.
 
                 section#photo-intro.intro-toggle.main-photo
-                    div
-                        div
+                    div.intro-out
+                        div.intro-img
+                            div.intro-back
                             img(src="https://picsum.photos/200/300?grayscale", alt="")
-                        div
+                        div.intro-text
 
-                            p Working with photography, filming and video editing since 2015.
+                            p.principal Photographer Videomaker since 2015
 
                             p In Japan, worked from 2016 to early 2017, at Tiempo Iberoamericano with video editing and filming, photography. 
 
@@ -66,10 +75,10 @@ html(lang="en")
                             
                             p In 2019 started to work as photographer and videomaker at Triana Productions, flamenco music and dance company.
                             
-                            p Tools: Illustrator, Photoshop, InDesign, Premiere Pro, After Effects DaVinci Resolve, Lightroom.
+                            p Tools: Illustrator, Photoshop, InDesign, Premiere Pro, After Effects, DaVinci Resolve, Lightroom.
 
             section
                 //- photos in galery style 
         footer
             //- contact informations
-            script(src="js/src/js/appmin.js")
+            script(src="js/src/js/app.min.js")

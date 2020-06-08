@@ -1,9 +1,12 @@
 // TRANSLATE INTRO ON CLICK
 var devToggle = document.getElementById('dev-toggle');
 var photoToggle = document.getElementById('photo-toggle');
+var devSec = document.getElementById('dev-sec');
+var photoSec = document.getElementById('photo-sec');
 var mainDev = document.getElementById('dev-intro');
 var mainPhoto = document.getElementById('photo-intro');
 var introToggle = document.querySelectorAll('.intro-toggle');
+var secMenu = document.querySelectorAll('.sec-menu');
 
 
 function changeClass(){
@@ -17,15 +20,23 @@ function changeClass(){
     [].forEach.call(introToggle, function (el) {
         el.classList.remove('slide-on');
     });
-    if (this.id == 'dev-toggle') {
+    [].forEach.call(secMenu, function(el) {
+        el.classList.remove('selected');
+    });
+
+    if (this.id == 'dev-toggle' || this.id == 'dev-sec') {
         mainDev.classList.add('slide-on');
+        devSec.classList.add('selected');
     } else {
         mainPhoto.classList.add('slide-on');
+        photoSec.classList.add('selected');
     };
 }
 window.onload = function(){
     devToggle.addEventListener( 'click', changeClass);
     photoToggle.addEventListener( 'click', changeClass);
+    devSec.addEventListener( 'click', changeClass);
+    photoSec.addEventListener( 'click', changeClass);
 }
 
 // JS FOR ROUTER
