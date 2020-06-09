@@ -29,7 +29,8 @@ $base-color: #BFB188;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    &-back {
+    &::after {
+        content: '';
         height: 654px;
         width: 60%;
         border: 8px solid black;
@@ -38,6 +39,7 @@ $base-color: #BFB188;
         left: 43%;
         margin-right: -50%;
         transform: translate(-50%, -50%);
+        z-index: -1;
     }
     &-text {
         margin: 5rem auto;
@@ -82,13 +84,13 @@ $base-color: #BFB188;
         h3 {
             font-family: $playfair;
             color: $base-color;
-            font-size: 3.2rem;
+            font-size: 3rem;
             text-align: center;
             line-height: 0.8;
             position: absolute;
             // bottom : 2rem;
             transition: all .4s ease-out;
-            opacity: 0;
+            // opacity: 0;
             transform: translateX(0);
         }
         &:hover {
@@ -99,7 +101,7 @@ $base-color: #BFB188;
             h3 {
                 color: $accent-color;
                 // transform: rotateY(-180deg);
-                opacity: 1;
+                // opacity: 1;
                 transform: translateX(30px)
             }
         }
@@ -120,7 +122,7 @@ $base-color: #BFB188;
         margin-right : 1rem;
         h3 {
             color: $base-color;
-            right: -1rem;
+            right: -1.2rem;
             top: 6rem;
         }
         &:hover {
@@ -141,25 +143,31 @@ $base-color: #BFB188;
     .all-image {
         text-align: center;
         position: relative;
-        .image-back {
+        &::after {
+            content: '';
             height: 150px;
             width: 94%;
             border: 8px solid black;
-            top: 50%;
-            // left: 4%;
-            transform: translate(0%, -50%);
+            top: 58%;
+            left: 0%;
             position: absolute;
             z-index: -1;
         }
-        img {
+        .all-in {
+            height: 300px;
+            width: 200px;
+            background-image: url('https://picsum.photos/200/300');
             transition: all .4s ease-in-out;
+            transform: scale(1);
+            margin: 0 auto;
         }
-        &:hover img {
-            transform: translate(5%, 5%);
+        &:hover .all-in {
+            transform: scale(1.2);
+            background-image: url('https://picsum.photos/200/300?grayscale')
         }
     }
     .all-text {
-        padding-top: 2rem;
+        padding-top: 4rem;
         text-align: center;
         line-height: 1.2;
         p {
@@ -189,6 +197,16 @@ $base-color: #BFB188;
         .intro-img {
             text-align: right;
             position: relative;
+            &::after {
+                content: '';
+                height: 150px;
+                width: 220px;
+                top: 50%;
+                right: 10%;
+                transform: translate(0%, -50%);
+                position: absolute;
+                z-index: -1;
+            }
         }
         .intro-text {
             line-height: 1.2;
@@ -203,33 +221,58 @@ $base-color: #BFB188;
                 }
             }
         }
-        .intro-back {
-            height: 150px;
-            width: 220px;
-            top: 50%;
-            right: 10%;
-            transform: translate(0%, -50%);
-            position: absolute;
-            z-index: -1;
-        }
+
         .menu-sub {
             margin: 2rem auto;
+            width: 300px;
             ul {
                 margin: 0 auto;
             }
             a {
                 font-family: $playfair;
                 text-align: center;
-                line-height: 2;
+                font-weight: 700;
+                line-height: 3;
+                font-size: 1.2rem;
                 display: block;
                 text-decoration: none;
+                position: relative;
                 &.selected{
                     color: $accent-color;
+                    &::before {
+                        height: 40px;
+                        width: 40px;  
+                    }
+                }
+                &::before {
+                    content: '';
+                    border: 4px solid black;
+                    display: block;
+                    height: 30px;
+                    width: 30px;
+                    left: 15%;
+                    top: 1%;
+                    position: absolute;
+                    z-index: -1;
+                    transition: .2s ease-in;
+                }
+                &:hover::before {
+                    height: 40px;
+                    width: 40px;
                 }
             }
-            a#photo-sec.selected {
-                color: $base-color;
+            a#photo-sec{
+                &::before{
+                    left: auto;
+                    top: auto;
+                    right:8%;
+                    bottom: 1%;
+                }
+                &.selected {
+                    color: $base-color;
+                }
             }
+                
         }
     }
     &-dev, &-photo {
@@ -244,8 +287,10 @@ $base-color: #BFB188;
         &.slide-on {
             transform : translateX(0)   
         }
-        .intro-back {
-            border: 8px solid $accent-color;
+        .intro-img {
+            &::after {
+                border: 8px solid $accent-color;
+            }
         }
     }
     &-photo {
@@ -258,19 +303,28 @@ $base-color: #BFB188;
         .intro-img {
             text-align: left;
 
-            .intro-back {
+            &::after {
                 left: 10%;
                 right: auto;
+                border: 8px solid $base-color;
             }
         }
         .intro-text {
             text-align: right;
         }
-        .intro-back {
-            border: 8px solid $base-color;
-        }
     }
 
 }
 
+
+
+
+
+
+
+
 // ANIMATIONS
+
+// intro animation
+.header {
+}
