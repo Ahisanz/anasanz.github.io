@@ -35,15 +35,16 @@ window.onload = function(){
     photoToggle.addEventListener( 'click', changeClass);
     devSec.addEventListener( 'click', changeClass);
     photoSec.addEventListener( 'click', changeClass);
+
+
+    // SCROLLMAGIC CSS ANIMATION (DONT WORK IN IE9) D=
+    var controller = new ScrollMagic.Controller();
+    var scene = new ScrollMagic.Scene({triggerElement: "#trigger-intro"})
+                            .setClassToggle("#animate-image, #animate-text", "fade-in")
+                            .addTo(controller);
 }
 
-// SCROLLMAGIC CSS ANIMATION (DONT WORK IN IE9) D=
-var controller = new ScrollMagic.Controller();
- var scene = new ScrollMagic.Scene({triggerElement: "#trigger-intro"})
-							// trigger animation by adding a css class
- 							.setClassToggle("#animate-image", "fade-in")
-// 							.addIndicators({name: "1 - add a class"}) // add indicators (requires plugin)
-							.addTo(controller);
+
 
 
 // scrollSmooth Function

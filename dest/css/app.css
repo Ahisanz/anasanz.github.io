@@ -100,19 +100,21 @@ a {
       height: 300px;
       width: 200px;
       background-image: url("https://picsum.photos/200/300");
-      transition: all .4s ease-in-out;
+      transition: all .3s ease-in-out;
       transform: scale(1);
       margin: 0 auto; }
     .all-intro .all-image.fade-in {
       opacity: 1;
       transform: scale(1); }
     .all-intro .all-image:hover .all-in {
-      transform: scale(1.2);
       background-image: url("https://picsum.photos/200/300?grayscale"); }
   .all-intro .all-text {
     padding-top: 4rem;
     text-align: center;
-    line-height: 1.2; }
+    line-height: 1.2;
+    transition: all .4s ease-out;
+    transform: translateX(-40px);
+    opacity: 0; }
     .all-intro .all-text p {
       padding-bottom: .5rem; }
       .all-intro .all-text p.title {
@@ -121,6 +123,9 @@ a {
         font-size: 2.5rem;
         line-height: .8;
         margin-bottom: 2rem; }
+    .all-intro .all-text.fade-in {
+      transform: translateX(0);
+      opacity: 1; }
 
 .main-intro {
   margin-top: 2rem;
@@ -164,7 +169,8 @@ a {
       font-size: 1.2rem;
       display: block;
       text-decoration: none;
-      position: relative; }
+      position: relative;
+      transition: all .2s ease-in-out; }
       .main-intro .menu-sub a.selected {
         color: #C1204A; }
         .main-intro .menu-sub a.selected::before {
@@ -184,6 +190,8 @@ a {
       .main-intro .menu-sub a:hover::before {
         height: 40px;
         width: 40px; }
+      .main-intro .menu-sub a:hover {
+        font-size: 1.3rem; }
     .main-intro .menu-sub a#photo-sec::before {
       left: auto;
       top: auto;
@@ -198,17 +206,21 @@ a {
   position: absolute; }
 
 .main-dev {
+  opacity: 0;
   transform: translateX(-100%);
   transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); }
   .main-dev.slide-on {
+    opacity: 1;
     transform: translateX(0); }
   .main-dev .intro-img::after {
     border: 8px solid #C1204A; }
 
 .main-photo {
+  opacity: 0;
   transform: translateX(100%);
   transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); }
   .main-photo.slide-on {
+    opacity: 1;
     transform: translateX(0); }
   .main-photo .intro-img {
     text-align: left; }

@@ -31,17 +31,12 @@ $base-color: #BFB188;
     position: relative;
     &::after {
         content: '';
-        // height: 654px;
-        // width: 60%;
         border: 8px solid black;
         position: absolute;
         top: 0%;
         left: 0%;
-        // margin-right: -50%;
-        // transform: translate(-50%, -50%);
         z-index: -1;
         opacity: 0;
-        
     }
     &-text {
         margin: 5rem auto;
@@ -49,7 +44,6 @@ $base-color: #BFB188;
         h1, h2 {
           font-family : $playfair;
           line-height: .9;
-        //   transition: all .2s ease-in-out;
           cursor: crosshair;
         }
         h1 {
@@ -62,9 +56,7 @@ $base-color: #BFB188;
             &:hover {
                 // font-size: 1.7rem;
             }
-
         }
-
     }
     &-dev,  &-photo {
         height: 250px;
@@ -74,8 +66,6 @@ $base-color: #BFB188;
         background-position: center;
         background-image : url('https://picsum.photos/1024/250?grayscale');
         transition: all .7s;
-        // -webkit-transform: rotateY(0) translateY(0);
-        //  transform: rotateY(0) translateY(0);
         transform: scale(1);
         a {
             display: block;
@@ -90,20 +80,14 @@ $base-color: #BFB188;
             text-align: center;
             line-height: 0.8;
             position: absolute;
-            // bottom : 2rem;
             transition: all .4s ease-out;
-            // opacity: 0;
             transform: translateX(0);
         }
         &:hover {
             transform: scale(1.1);
-            // -webkit-transform: rotateY(180deg) translateY(10px);
-            // transform: rotateY(180deg) translateY(10px);
             background-image : url('https://picsum.photos/1024/250');
             h3 {
                 color: $accent-color;
-                // transform: rotateY(-180deg);
-                // opacity: 1;
                 transform: translateX(30px)
             }
         }
@@ -132,8 +116,6 @@ $base-color: #BFB188;
                 color: $accent-color;
                 transform: translateX(-30px)
             }
-            // -webkit-transform: rotateY(180deg);
-            // transform: rotateY(180deg) translateY(-10px);
         }
     }
 }
@@ -162,7 +144,7 @@ $base-color: #BFB188;
             height: 300px;
             width: 200px;
             background-image: url('https://picsum.photos/200/300');
-            transition: all .4s ease-in-out;
+            transition: all .3s ease-in-out;
             transform: scale(1);
             margin: 0 auto;
         }
@@ -171,7 +153,7 @@ $base-color: #BFB188;
             transform: scale(1) ;
         }
         &:hover .all-in {
-            transform: scale(1.2);
+            // transform: scale(1.2);
             background-image: url('https://picsum.photos/200/300?grayscale')
         }
     }
@@ -179,6 +161,9 @@ $base-color: #BFB188;
         padding-top: 4rem;
         text-align: center;
         line-height: 1.2;
+        transition: all .4s ease-out ;
+        transform: translateX(-40px);
+        opacity: 0;
         p {
             padding-bottom: .5rem;
             &.title {
@@ -189,9 +174,12 @@ $base-color: #BFB188;
                 margin-bottom: 2rem;
             }
         }
+        &.fade-in {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 }
-
 // MAIN ABOUT PHOTO AND DEV TRANSLATE
 .main {
     &-intro {
@@ -230,7 +218,6 @@ $base-color: #BFB188;
                 }
             }
         }
-
         .menu-sub {
             margin: 2rem auto;
             width: 300px;
@@ -246,6 +233,7 @@ $base-color: #BFB188;
                 display: block;
                 text-decoration: none;
                 position: relative;
+                transition: all .2s ease-in-out;
                 &.selected{
                     color: $accent-color;
                     &::before {
@@ -269,6 +257,9 @@ $base-color: #BFB188;
                     height: 40px;
                     width: 40px;
                 }
+                &:hover {
+                    font-size: 1.3rem;
+                }
             }
             a#photo-sec{
                 &::before{
@@ -281,7 +272,6 @@ $base-color: #BFB188;
                     color: $base-color;
                 }
             }
-                
         }
     }
     &-dev, &-photo {
@@ -291,9 +281,11 @@ $base-color: #BFB188;
     }
     &-dev {
         // background-color: $accent-color;
+        opacity: 0;
         transform : translateX(-100%);
         transition: .5s cubic-bezier(0.22, 0.61, 0.36, 1);
         &.slide-on {
+            opacity: 1;
             transform : translateX(0)   
         }
         .intro-img {
@@ -304,9 +296,11 @@ $base-color: #BFB188;
     }
     &-photo {
         // background-color: $base-color;
+        opacity: 0;
         transform : translateX(100%);
         transition: .5s cubic-bezier(0.22, 0.61, 0.36, 1);
         &.slide-on {
+            opacity: 1;
             transform : translateX(0)   
         }
         .intro-img {
@@ -322,16 +316,7 @@ $base-color: #BFB188;
             text-align: right;
         }
     }
-
-
 }
-
-
-
-
-
-
-
 
 // ANIMATIONS
 
@@ -360,13 +345,11 @@ $base-color: #BFB188;
                 animation: show-up-right 1s ease-in-out both 2s;
             }
         }
-
     }
     &::after {
         animation: popup-square-init 3s cubic-bezier(0.4, 0, 0.2, 1) both;
     }
 }
-
 @keyframes show-up-left {
     0% {
         opacity: 0;
@@ -387,7 +370,6 @@ $base-color: #BFB188;
         transform: translateX(0px);
     }
 }
-
 @keyframes show-up-scale {
     0% {
         opacity: 0;
@@ -396,7 +378,6 @@ $base-color: #BFB188;
         opacity: 1;
     }
 }
-
 @keyframes popup-square-init {
     0% { 
         opacity: 0;
