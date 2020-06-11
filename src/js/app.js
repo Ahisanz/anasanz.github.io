@@ -7,15 +7,13 @@ var mainDev = document.getElementById('dev-intro');
 var mainPhoto = document.getElementById('photo-intro');
 var introToggle = document.querySelectorAll('.intro-toggle');
 var secMenu = document.querySelectorAll('.sec-menu');
+var menuSec = document.getElementById('menu-sec');
 
 
 function changeClass(){
     event.preventDefault();
 
-    window.scrollTo({
-        top: 1500,
-        behavior: 'smooth',
-    });
+    scrollSmooth();
 
     [].forEach.call(introToggle, function (el) {
         el.classList.remove('slide-on');
@@ -38,6 +36,41 @@ window.onload = function(){
     devSec.addEventListener( 'click', changeClass);
     photoSec.addEventListener( 'click', changeClass);
 }
+
+// SCROLLMAGIC CSS ANIMATION (DONT WORK IN IE9) D=
+var controller = new ScrollMagic.Controller();
+ var scene = new ScrollMagic.Scene({triggerElement: "#trigger-intro"})
+							// trigger animation by adding a css class
+ 							.setClassToggle("#animate-image", "fade-in")
+// 							.addIndicators({name: "1 - add a class"}) // add indicators (requires plugin)
+							.addTo(controller);
+
+
+// scrollSmooth Function
+function scrollSmooth() {
+    var target = document.getElementById('menu-sec');
+        
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+    
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+    
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+};
 
 // JS FOR ROUTER
 // class Router {

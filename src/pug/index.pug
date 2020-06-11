@@ -6,6 +6,8 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="css/app.css")
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js")
+
         title Ana Sanz / Webportfolio
     body
         header.header
@@ -19,19 +21,18 @@ html(lang="en")
                 a(href="#" id="photo-toggle")
                     h3 Photographer</br>Videomaker 
         main
-            section.all-intro
-                div.all-image
+            section.all-intro#trigger-intro
+                div.all-image#animate-image
                     div.all-in
-                    //- (src="https://picsum.photos/200/300", alt="")
-                div.all-text
+                div.all-text#animate-text
                     p.title Living in Palma de Mallorca, Spain
                     p Self and quick learner, organized, versatile, curious and dedicated.
                     p Always searching for new technologies to learn and improve in design, frontend.
                     p Native brazilian portuguese, advanced english and spanish.
                     p College in Product Design at Belas Artes de São Paulo
 
-            section.main-intro
-                nav#menu-sec.menu-sub
+            section.main-intro#menu-sec
+                nav.menu-sub
                     ul
                         li
                             a(href='#' id='dev-sec' class="sec-menu selected") FrontEnd Developer

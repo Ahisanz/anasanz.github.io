@@ -19,29 +19,21 @@ a {
   position: relative; }
   .header::after {
     content: '';
-    height: 654px;
-    width: 60%;
     border: 8px solid black;
     position: absolute;
-    top: 60%;
-    left: 43%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    z-index: -1; }
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+    opacity: 0; }
   .header-text {
     margin: 5rem auto;
     text-align: center; }
     .header-text h1, .header-text h2 {
       font-family: "Playfair Display";
       line-height: .9;
-      transition: all .2s ease-in-out;
       cursor: crosshair; }
     .header-text h1 {
       font-size: 3rem; }
-      .header-text h1:hover {
-        font-size: 3.5rem; }
-    .header-text h2:hover {
-      font-size: 1.7rem; }
   .header-dev, .header-photo {
     height: 250px;
     width: 90%;
@@ -81,9 +73,9 @@ a {
     .header-photo h3 {
       color: #BFB188;
       right: -1.2rem;
-      top: 6rem; }
+      top: 1rem; }
     .header-photo:hover h3 {
-      color: #BFB188;
+      color: #C1204A;
       transform: translateX(-30px); }
 
 .all-intro {
@@ -91,7 +83,10 @@ a {
   margin: 0 auto; }
   .all-intro .all-image {
     text-align: center;
-    position: relative; }
+    position: relative;
+    opacity: 0;
+    transition: all .5s ease-in;
+    transform: scale(0.8); }
     .all-intro .all-image::after {
       content: '';
       height: 150px;
@@ -108,6 +103,9 @@ a {
       transition: all .4s ease-in-out;
       transform: scale(1);
       margin: 0 auto; }
+    .all-intro .all-image.fade-in {
+      opacity: 1;
+      transform: scale(1); }
     .all-intro .all-image:hover .all-in {
       transform: scale(1.2);
       background-image: url("https://picsum.photos/200/300?grayscale"); }
@@ -220,3 +218,66 @@ a {
       border: 8px solid #BFB188; }
   .main-photo .intro-text {
     text-align: right; }
+
+.header-text h2 {
+  animation: show-up-left 1s ease-in both; }
+
+.header-text h1 {
+  animation: show-up-right 1s ease-out both .8s; }
+
+.header-dev {
+  animation: show-up-right 1s ease-in-out both 1.5s; }
+  .header-dev a h3 {
+    animation: show-up-left 1s ease-in-out both 1.5s; }
+
+.header-photo {
+  animation: show-up-left 1s ease-in-out both 2s; }
+  .header-photo a h3 {
+    animation: show-up-right 1s ease-in-out both 2s; }
+
+.header::after {
+  animation: popup-square-init 3s cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+@keyframes show-up-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
+
+@keyframes show-up-right {
+  0% {
+    opacity: 0;
+    transform: translateX(30px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
+
+@keyframes show-up-scale {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes popup-square-init {
+  0% {
+    opacity: 0;
+    transform: translate(20%, 120%);
+    height: 50px;
+    width: 50px; }
+  30% {
+    opacity: 1;
+    transform: translate(200%, 50%);
+    height: 200px;
+    width: 50px; }
+  60% {
+    opacity: 1;
+    transform: translate(32%, 154%);
+    height: 200px;
+    width: 200px; }
+  100% {
+    opacity: 1;
+    transform: translate(25%, 25%);
+    height: 654px;
+    width: 150px; } }
