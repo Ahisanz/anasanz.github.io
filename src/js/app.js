@@ -42,10 +42,36 @@ window.onload = function(){
     var scene = new ScrollMagic.Scene({triggerElement: "#trigger-intro"})
                             .setClassToggle("#animate-image, #animate-text", "fade-in")
                             .addTo(controller);
+
+    // Modal Opener Base 
+
+    var triggers = document.getElementsByClassName('box-content');
+    var btnArray = Array.from(triggers).entries();
+    var modals = document.getElementsByClassName('modal');
+    var closeBtns = document.getElementsByClassName('close-modal');
+
+    for (let [index, trigger] of btnArray) {
+        let triggerIndex = index;
+
+
+        function toggleModal() {
+            modals[triggerIndex].classList.toggle("show-modal");
+            if(this.classList.contains('box-content') && this.classList.contains('video')) {
+                var videoId = trigger.id;
+                var modalParent = document.getElementById('modal-' + triggerIndex +'');
+                var videoIframe = '<iframe enablejsapi=1 src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>'
+                modalParent.innerHTML = modalParent.innerHTML + videoIframe;
+            } else if (this.classList.contains('close-modal') && this.classList.contains('video')) {
+                var modalParent = document.getElementById('modal-' + triggerIndex + '');
+                modalParent.innerHTML = '';
+            }            
+
+        }
+        trigger.addEventListener("click", toggleModal);
+        closeBtns[triggerIndex].addEventListener("click", toggleModal);
+  }
+
 }
-
-
-
 
 // scrollSmooth Function
 function scrollSmooth() {
@@ -72,100 +98,3 @@ function scrollSmooth() {
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 };
-
-// JS FOR ROUTER
-// class Router {
-    
-//     routes = [];
-
-//     mode = null;
-
-//     root = '/';
-
-//     constructor(options) {
-//         this.mode = window.history.pushState ? 'history' : 'hash';
-//         if (options.mode) this.mode = options.mode;
-//         if (options.root) this.root = options.root;
-//         this.listen();
-//     };
-
-//     add = (path,cb) => {
-//         this.routes.push({ path, cb});
-//         return this;
-//     };
-//     remove = path => {
-//         for (let i = 0; i < this.routes.length; i += 1) {
-//             if (this.routes[i].path === path) {
-//                 this.routes.slice(i, 1);
-//                 return this;
-//             }
-//         }
-//         return this;
-//     };
-//     flush = () => {
-//         this.routes = [];
-//         return this;
-//     };
-
-//     clearSlashes = path =>
-//         path
-//             .toString()
-//             .replace(/\/$/, '')
-//             .replace(/^\//, '');
-        
-//             getFragment = () => {
-//                 let fragment = '';
-//                 if ( history.mode === 'history') {
-//                     fragment = this.clearSlashes(decodeURI(window.location.pathname + window.location.search));
-//                     fragment = fragment.replace(/\?(.*)$/, '');
-//                     fragment = this.root !== '/' ? fragment.replace(this.root, '') : fragment;
-//                 } else {
-//                     const match = window.location.href.match(/#(.*)$/);
-//                     fragment = match ? match[1] :  '';
-//                 }
-//                 return this.clearSlashes(fragment);
-//             };
-    
-//     getFragment = () => {
-//         let fragment = '';
-//         if (this.mode === 'history') {
-//             fragment = this.clearSlashes(decodeURI(window.location.pathname + window.location.search));
-//             fragment = fragment.replace(/\?(.*)$/, '');
-//             fragment = this.root !== '/' ? fragment.replace(this.root, '') : fragment;
-//         } else {
-//             const match = window.location.href.match(/#(.*)$/);
-//             fragment = match ? match[1] : '' ;
-//         }
-//         return this.clearSlashes(fragment);
-//     }
-    
-//     navigate = (path = '') => { 
-//         if (this.mode === 'history') {
-//             window.history.pushState(null, null, this.root + this.clearSlashes(path));
-//         } else {
-//             window.location.herf = `${window.location.href.replace(/#(.*)$/, '')}#${path}`;
-//         }
-//         return this;
-//     }
-//     listen = () => {
-//         clearInterval(this.interval);
-//         this.interval = setInterval(this.interval, 50);
-//     };
-//     interval = () => {
-//         if (this.current === this.getFragment()) return;
-//         this.current =this.getFragment();
-
-//         this.routes.some(route => {
-//             const match = this.current.match(route.path);
-//             if (match) {
-//                 match.shift();
-//                 route.cb.apply({}, match);
-//                 return match;
-//             }
-//             return false;
-//         })
-//     }
-
-// }
-
-// export default Router
