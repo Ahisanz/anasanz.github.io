@@ -9,7 +9,7 @@ html(lang="en")
         script(src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js")
 
         title Ana Sanz / Webportfolio
-    body
+    body#body
         header.header
             div.header-text
                 h2 Hello there
@@ -76,33 +76,40 @@ html(lang="en")
 
             section.main-gallery
                 p.principal Jobs Gallery
-                .box-out
-                    div.box-in
-                        div.box-content#content-1
-                            img(src="https://picsum.photos/200/200?grayscale", alt="")
-                            p Flamenco / Photos
-                        div.box-content.video#WSpCYsdggxk
-                            p Louise / Music Video
-                            img(src="https://picsum.photos/200/200?grayscale", alt="")
-                        div.box-content#content-3
-                            img(src="https://picsum.photos/200/200?grayscale", alt="")
-                            p Dance Shows / Photos
-                        div.box-content.video#2piYXRX3CvI
-                            p Modern Dance / Music Video
-                            img(src="https://picsum.photos/200/200?grayscale", alt="")
-                        div.box-content#content-5
-                            img(src="https://picsum.photos/200/200?grayscale", alt="")
-                            p Maroko / Photos
-                        div.box-content.video#v-iqCyFATxc
-                            p Erotik Dance / Music Video
-                            img(src="https://picsum.photos/200/200?grayscale", alt="")
+                div.box-in
+                    div.box-content#content-1
+                        img(src="https://picsum.photos/200/200?grayscale", alt="")
+                        p Flamenco / Photos
+                    div.box-content.video#WSpCYsdggxk
+                        p Louise / Music Video
+                        img(src="https://picsum.photos/200/200?grayscale", alt="")
+                    div.box-content#content-3
+                        img(src="https://picsum.photos/200/200?grayscale", alt="")
+                        p Dance Shows / Photos
+                    div.box-content.video#2piYXRX3CvI
+                        p Modern Dance / Music Video
+                        img(src="https://picsum.photos/200/200?grayscale", alt="")
+                    div.box-content#content-5
+                        img(src="https://picsum.photos/200/200?grayscale", alt="")
+                        p Maroko / Photos
+                    div.box-content.video#v-iqCyFATxc
+                        p Erotik Dance / Music Video
+                        img(src="https://picsum.photos/200/200?grayscale", alt="")
                 //- photos in galery style 
 
                 .modals-base
                     .modal#modal-0
                         .overlay
                         .modal-content
-                            p oh shiting!
+                            div.photos-out
+                                div.photos-inner
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")
+                                    img.gallery-img(src="https://picsum.photos/250/400?random=1", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?random=2", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")  
+                                    img.gallery-img(src="https://picsum.photos/250/400?random=3", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
                             button.close-modal X
                 .modals-base
                     .modal
@@ -113,7 +120,16 @@ html(lang="en")
                 .modals-base
                     .modal#modal-2
                         .overlay
-                        .modal-content  
+                        .modal-content
+                            div.photos-out
+                                div.photos-inner
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")
+                                    img.gallery-img(src="https://picsum.photos/250/400?random=1", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?random=2", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")  
+                                    img.gallery-img(src="https://picsum.photos/250/400?random=3", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
                             button.close-modal X
                 .modals-base
                     .modal
@@ -125,7 +141,15 @@ html(lang="en")
                     .modal
                         .overlay
                         .modal-content
-
+                            div.photos-out
+                                div.photos-inner
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")
+                                    img.gallery-img(src="https://picsum.photos/250/400?random=1", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?random=2", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")  
+                                    img.gallery-img(src="https://picsum.photos/250/400?random=3", alt="") 
+                                    img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
                             button.close-modal X
                 .modals-base
                     .modal
@@ -137,6 +161,8 @@ html(lang="en")
             section.contact
                 .container
                     p.principal Leave me a message
+                    p Now looking for new adventures in others countries in Europe
+                    br/
                     p anaclaulp@gmail.com
                     p +34 695749730
                     p linkedin.com/in/ana-claudia-sanz/

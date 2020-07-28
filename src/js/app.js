@@ -53,9 +53,10 @@ window.onload = function(){
     for (let [index, trigger] of btnArray) {
         let triggerIndex = index;
 
-
         function toggleModal() {
             modals[triggerIndex].classList.toggle("show-modal");
+            var body = document.getElementById('body');
+            body.classList.toggle('modal-open');
             if(this.classList.contains('box-content') && this.classList.contains('video')) {
                 var videoId = trigger.id;
                 var modalParent = document.getElementById('modal-' + triggerIndex +'');
@@ -70,6 +71,85 @@ window.onload = function(){
         trigger.addEventListener("click", toggleModal);
         closeBtns[triggerIndex].addEventListener("click", toggleModal);
   }
+
+    // HORIZONTAL SCROLL GALLERY ITEMS
+
+    const sliderGallery = document.querySelector('.box-in');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    sliderGallery.addEventListener('mousedown', (e) => {
+        isDown = true;
+        sliderGallery.classList.add('active');
+        startX = e.pageX - sliderGallery.offsetLeft;
+        scrollLeft = sliderGallery.scrollLeft;
+    });
+    sliderGallery.addEventListener('mouseleave', () => {
+        isDown = false;
+        sliderGallery.classList.remove('active');
+    });
+    sliderGallery.addEventListener('mouseup', () => {
+        isDown = false;
+        sliderGallery.classList.remove('active');   
+    });
+    sliderGallery.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - sliderGallery.offsetLeft;
+        const walk = (x - startX) * 3; //scroll-fast
+        sliderGallery.scrollLeft = scrollLeft - walk;
+        // console.log(walk);
+    });
+
+    //GALLERY IMG SCROLL TEST
+ 
+        // var imageIndex = 0; 
+        // var galleryImages = document.getElementsByClassName('gallery-img'); 
+        // var isMouseOverImage = false;  
+        // var scrollImages = document.getElementById('photos-1'); 
+        // var x, y; 
+        // function noScroll() { 
+        //     window.scrollTo(x, y); 
+        // } 
+   
+        // scrollImages.addEventListener( 
+        //         "mouseenter", function() { 
+   
+        //     x = window.pageXOffset; 
+        //     y = window.pageYOffset; 
+        //     window.addEventListener("scroll", noScroll); 
+        //     isMouseOverImage = true; 
+        // }); 
+   
+        // scrollImages.addEventListener( 
+        //         "mouseleave", function() { 
+        //     isMouseOverImage = false; 
+        //     window.removeEventListener( 
+        //                 "scroll", noScroll); 
+        // }); 
+    
+        // scrollImages.addEventListener( 
+        //             "wheel", function(e) { 
+                              
+        //     if (isMouseOverImage) { 
+        //         var nextImageIndex; 
+   
+        //         if (e.deltaY > 0) 
+        //             nextImageIndex = (imageIndex + 1) 
+        //                              % galleryImages.length; 
+        //         else
+        //             nextImageIndex =  
+        //                     (imageIndex - 1 
+        //                     + galleryImages.length) 
+        //                     % galleryImages.length; 
+   
+        //         galleryImages[imageIndex].classList.remove('show-photo'); 
+        //         galleryImages[nextImageIndex].classList.add('show-photo'); 
+        //         imageIndex = nextImageIndex; 
+        //     } 
+        // });    
+
 
 }
 
