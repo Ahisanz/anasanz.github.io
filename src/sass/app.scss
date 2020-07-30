@@ -67,14 +67,6 @@ p.principal {
         }
         h1 {
             font-size: 3rem;
-            &:hover {
-                // font-size: 3.5rem;
-            }
-        }
-        h2 {
-            &:hover {
-                // font-size: 1.7rem;
-            }
         }
     }
     &-dev,  &-photo {
@@ -123,9 +115,6 @@ p.principal {
         &:hover {
             background-image : url('../images/flamenco-15.jpg');
             background-position: top;
-            h3 {
-                // margin-right: 2rem;
-            }
         }
     }
     &-photo { 
