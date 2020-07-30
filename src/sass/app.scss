@@ -436,7 +436,8 @@ p.principal {
             left: 47%;
             transform: translate(-50%, -50%);
             top: 45%;
-            transition: .2s;
+            transition: .5s;
+            display: none;
             &.in-over {
                 animation: in-over-arrow  infinite 1.5s both alternate cubic-bezier(0.65, 0.05, 0.36, 1);
             }
@@ -448,15 +449,13 @@ p.principal {
                 margin: .35rem;
                 width: 0;
                 height: 0;
-                transition: .1s;
+                transition: .5s;
             }
         }
     .box-in.active + .container-arrow {
         border: solid 5px transparent ;
-        height: 0;
-        width: 0;
         .arrow {
-            font-size: 0;
+            color: transparent;
         }
     }
     &.fade-in {
@@ -466,6 +465,9 @@ p.principal {
         }
         .box-in {
             opacity: 1;
+        }
+        .container-arrow {
+            display: block;
         }
 
     }
@@ -558,6 +560,31 @@ p.principal {
             }
         }
     }
+    .container-arrow {
+        width: 22px;
+        height: 22px;
+        border: solid 3px $accent-color;
+        border-radius: 50%;
+        transition: .2s;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        opacity: .8;
+        animation: up-down-arrow 1s infinite ease-in-out alternate both;
+        .arrow {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            font-size: 1rem;
+            color: $accent-color;
+            width: 0;
+            height: 0;
+            transition: .1s;
+            position: absolute;
+            right: 6.5%;
+            top: 4%;
+            transform: rotate(90deg);
+        }
+    }
 }
 .contact {
     transform: translateY(-30px);
@@ -610,8 +637,16 @@ p.principal {
         transform: scale(.3);
     }
     100% {
-        opacity: .5;
+        opacity: .8;
         transform: scale(.7);
+    }
+}
+@keyframes up-down-arrow {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(10px);
     }
 }
 @keyframes show-up-left {

@@ -52,7 +52,7 @@ window.onload = function(){
                 .setClassToggle("#main-gallery","fade-in")
                 .addTo(controller);
     
-    var scene4 = new ScrollMagic.Scene({triggerElement: "#contact", offset: -200})
+    var scene4 = new ScrollMagic.Scene({triggerElement: "#contact", offset: -250})
                 .setClassToggle("#contact","fade-in")
                 .addTo(controller);
 
