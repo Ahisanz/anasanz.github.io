@@ -39,9 +39,22 @@ window.onload = function(){
 
     // SCROLLMAGIC CSS ANIMATION (DONT WORK IN IE9) D=
     var controller = new ScrollMagic.Controller();
+
     var scene = new ScrollMagic.Scene({triggerElement: "#trigger-intro"})
                             .setClassToggle("#animate-image, #animate-text, #big-only", "fade-in")
                             .addTo(controller);
+
+    var scene2 = new ScrollMagic.Scene({triggerElement: "#menu-sec"})
+                .setClassToggle("#menu-sec","fade-in")
+                .addTo(controller);
+
+    var scene3 = new ScrollMagic.Scene({triggerElement: "#main-gallery"})
+                .setClassToggle("#main-gallery","fade-in")
+                .addTo(controller);
+    
+    var scene4 = new ScrollMagic.Scene({triggerElement: "#contact", offset: -200})
+                .setClassToggle("#contact","fade-in")
+                .addTo(controller);
 
     // Modal Opener Base 
 

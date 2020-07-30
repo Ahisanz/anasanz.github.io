@@ -83,7 +83,7 @@ p.principal {
         margin: 4rem auto;
         position: relative;
         background-position: center;
-        background-image : url('https://picsum.photos/1024/250?grayscale');
+        background-size: cover;
         transition: all .7s;
         transform: scale(1);
         a {
@@ -112,6 +112,8 @@ p.principal {
         }
     }
     &-dev {
+        background-image : url('../images/percusion-11.jpg');
+        background-position: center;
         margin-left : 1rem;
         h3 {
             bottom: -1rem;
@@ -119,6 +121,8 @@ p.principal {
             width: 426px;
         }
         &:hover {
+            background-image : url('../images/flamenco-15.jpg');
+            background-position: top;
             h3 {
                 // margin-right: 2rem;
             }
@@ -126,12 +130,16 @@ p.principal {
     }
     &-photo { 
         margin-right : 1rem;
+        background-image : url('../images/sakura-17.jpg');
+        background-position: top;
         h3 {
             color: $base-color;
             right: -1.2rem;
             top: 1rem;
         }
         &:hover {
+            background-image : url('../images/flamenco-19.jpg');
+            background-position: center;
             h3 {
                 color: $accent-color;
                 transform: translateX(-30px)
@@ -163,7 +171,9 @@ p.principal {
         .all-in {
             height: 300px;
             width: 200px;
-            background-image: url('https://picsum.photos/200/300');
+            background-image: url('../images/IMG_20200729_002055_2.jpg');
+            background-position: center;
+            background-size: cover;
             transition: all .3s ease-in-out;
             transform: scale(1);
             margin: 0 auto;
@@ -174,7 +184,9 @@ p.principal {
         }
         &:hover .all-in {
             // transform: scale(1.2);
-            background-image: url('https://picsum.photos/200/300?grayscale')
+            background-image: url('../images/IMG_20200610_205717_2.jpg');
+            background-position: center;
+            background-size: cover;
         }
     }
     .all-text {
@@ -216,7 +228,8 @@ p.principal {
         height: 1100px;
         position: relative;
         overflow: hidden;
-
+        opacity: 0;
+        transition: .8s;
         .intro-out {
             padding: 1rem;
         }
@@ -231,7 +244,7 @@ p.principal {
                 right: 10%;
                 transform: translate(0%, -50%);
                 position: absolute;
-                z-index: -1;
+                z-index: -9;
             }
         }
         .intro-text {
@@ -245,6 +258,9 @@ p.principal {
             margin: 2rem auto;
             width: 300px;
             height: 150px;
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: 1s;
             ul {
                 margin: 0 auto;
             }
@@ -297,6 +313,14 @@ p.principal {
                 }
             }
         }
+        &.fade-in {
+            opacity: 1;
+            .menu-sub {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+        }
     }
     &-dev, &-photo {
         height: 700px;
@@ -313,6 +337,12 @@ p.principal {
             transform : translateX(0)   
         }
         .intro-img {
+            background-image: url('../images/sakura-1.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 350px;
+            width: 220px;
+            margin: 0 0 0 auto;
             &::after {
                 border: 8px solid $accent-color;
             }
@@ -329,7 +359,12 @@ p.principal {
         }
         .intro-img {
             text-align: left;
-
+            background-image: url('../images/sakura-14.jpg');
+            background-position: -113px center;
+            background-size: cover;
+            height: 350px;
+            width: 220px;
+            margin: 0 auto 0 0;
             &::after {
                 left: 10%;
                 right: auto;
@@ -343,8 +378,12 @@ p.principal {
 }
 .main-gallery {
     padding: 1rem 0;
+    position: relative;
     p.principal {
         padding: 0 1rem;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: .5s;
     }
         .box-in {
             display: grid;
@@ -354,6 +393,7 @@ p.principal {
             height: 300px;
             padding: 2rem 0;
             transition: .5s;
+            opacity: 0;
             transform: scale(0.98);
             will-change: transform;
             user-select: none;
@@ -397,6 +437,49 @@ p.principal {
                 transform: scale(1)
             }
         }
+        .container-arrow {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: solid 5px $base-color;
+            border-radius: 50%;
+            right: 50%;
+            left: 47%;
+            transform: translate(-50%, -50%);
+            top: 45%;
+            transition: .2s;
+            &.in-over {
+                animation: in-over-arrow  infinite 1.5s both alternate cubic-bezier(0.65, 0.05, 0.36, 1);
+            }
+            .arrow {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-weight: bold;
+                font-size: 2.7rem;
+                color: $base-color;
+                margin: .35rem;
+                width: 0;
+                height: 0;
+                transition: .1s;
+            }
+        }
+    .box-in.active + .container-arrow {
+        border: solid 5px transparent ;
+        height: 0;
+        width: 0;
+        .arrow {
+            font-size: 0;
+        }
+    }
+    &.fade-in {
+        p.principal {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .box-in {
+            opacity: 1;
+        }
+
+    }
 }
 .modals-base {
     .modal {
@@ -488,9 +571,17 @@ p.principal {
     }
 }
 .contact {
+    transform: translateY(-30px);
+    transition: .5s;
+    opacity: 0;
     .container {
         padding: 1rem 1rem 6rem 1rem;
     }
+    &.fade-in {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
 }
 // ANIMATIONS
 
@@ -522,6 +613,16 @@ p.principal {
     }
     &::after {
         animation: popup-square-init 3s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+}
+@keyframes in-over-arrow {
+    0% {
+        opacity: .2;
+        transform: scale(.3);
+    }
+    100% {
+        opacity: .5;
+        transform: scale(.7);
     }
 }
 @keyframes show-up-left {
@@ -692,6 +793,9 @@ p.principal {
     }
     .main-gallery p.principal {
         text-align: center;
+    }
+    .modals-base .modal .modal-content {
+        width: 50%;
     }
 }
 @media screen and (min-width: 1024px) {
