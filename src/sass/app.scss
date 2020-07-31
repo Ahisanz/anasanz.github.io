@@ -166,16 +166,33 @@ p.principal {
             transition: all .3s ease-in-out;
             transform: scale(1);
             margin: 0 auto;
+            position: relative;
+            &::after {
+                content: '';
+                background-image: url('../images/IMG_20200729_002055_2p.jpg');
+                background-position: center;
+                background-size: cover;
+                position: absolute;
+                height: 300px;
+                width: 200px;
+                top: 0;
+                right: 0;
+                opacity: 0;
+                transition: .5s;
+            }
         }
         &.fade-in{
             opacity: 1;
             transform: scale(1) ;
         }
-        &:hover .all-in {
-            // transform: scale(1.2);
-            background-image: url('../images/IMG_20200610_205717_2.jpg');
-            background-position: center;
-            background-size: cover;
+        &:hover {
+            // animação para hover 
+            .all-in::after {
+                opacity: .8;
+                // background-image: url('../images/IMG_20200729_002055_2p.jpg');
+                // background-position: center;
+                // background-size: cover;
+            }
         }
     }
     .all-text {
@@ -200,7 +217,7 @@ p.principal {
             opacity: 1;
         }
         &#big-only {
-            transform: translateX(40px);
+            transform: translateX(20px);
             
             &.fade-in{
                 display: none;
@@ -376,7 +393,7 @@ p.principal {
     }
         .box-in {
             display: grid;
-            grid-template-columns: repeat(6, calc(90% - 30px));
+            grid-template-columns: repeat(6, calc(60%));
             grid-gap: 1rem;
             width: 100%;
             height: 300px;
@@ -563,7 +580,7 @@ p.principal {
     .container-arrow {
         width: 22px;
         height: 22px;
-        border: solid 3px $accent-color;
+        border: solid 3px #fff;
         border-radius: 50%;
         transition: .2s;
         position: absolute;
@@ -575,7 +592,7 @@ p.principal {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: bold;
             font-size: 1rem;
-            color: $accent-color;
+            color: #fff;
             width: 0;
             height: 0;
             transition: .1s;
@@ -634,7 +651,7 @@ p.principal {
 @keyframes in-over-arrow {
     0% {
         opacity: .2;
-        transform: scale(.3);
+        transform: scale(.5);
     }
     100% {
         opacity: .8;
@@ -643,10 +660,10 @@ p.principal {
 }
 @keyframes up-down-arrow {
     0% {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
     100% {
-        transform: translateY(10px);
+        transform: translateY(5px);
     }
 }
 @keyframes show-up-left {
@@ -703,7 +720,14 @@ p.principal {
         width: 150px;
     }
 }
-
+@keyframes hover-after {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(.8);
+    }
+}
 
 
 // MEDIA QUERIES
@@ -813,7 +837,7 @@ p.principal {
     .main-gallery .box-in {
         margin: 0 auto;
         max-width: 700px;
-        grid-template-columns: repeat(6, calc(40% - 30px));
+        grid-template-columns: repeat(6, calc(25%));
     }
     .main-gallery p.principal {
         text-align: center;
@@ -821,12 +845,55 @@ p.principal {
     .modals-base .modal .modal-content {
         width: 50%;
     }
+    .contact {
+        .container {
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
 }
 @media screen and (min-width: 1024px) {
     .header, .all-intro, .main-intro, .main-gallery, .contact {
         max-width: 1024px;
         margin: 0 auto;
     }
+    .header {
+        &-dev {
+            h3{
+                color: #fff;
+                bottom: 3rem;
+                left: -3rem;
+                opacity: 0;
+                transform: translateX(-50px);
+                animation: none!important;
+            }
+            &:hover {
+                // border-radius: 15%;
+                h3 {
+                    color: #fff;
+                    opacity: 1;
+                }
+            }
+        }
+        &-photo {
+            h3 {
+                color: #fff;
+                right: 2rem;
+                top: 2rem;
+                opacity: 0;
+                transform: translateX(50px);
+                animation: none!important;
+            }
+            &:hover {
+                // border-radius: 25%;
+                h3 {
+                    color: #fff;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
     .all-intro {
         .all-image {
             grid-column: 2/3;

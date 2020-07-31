@@ -44,11 +44,11 @@ window.onload = function(){
                             .setClassToggle("#animate-image, #animate-text, #big-only", "fade-in")
                             .addTo(controller);
 
-    var scene2 = new ScrollMagic.Scene({triggerElement: "#menu-sec"})
+    var scene2 = new ScrollMagic.Scene({triggerElement: "#menu-sec", offset: -200})
                 .setClassToggle("#menu-sec","fade-in")
                 .addTo(controller);
 
-    var scene3 = new ScrollMagic.Scene({triggerElement: "#main-gallery"})
+    var scene3 = new ScrollMagic.Scene({triggerElement: "#main-gallery", offset: -150})
                 .setClassToggle("#main-gallery","fade-in")
                 .addTo(controller);
     
