@@ -128,23 +128,9 @@ p.principal {
       transform: scale(1);
       margin: 0 auto;
       position: relative; }
-      .all-intro .all-image .all-in::after {
-        content: '';
-        background-image: url("../images/IMG_20200729_002055_2p.jpg");
-        background-position: center;
-        background-size: cover;
-        position: absolute;
-        height: 300px;
-        width: 200px;
-        top: 0;
-        right: 0;
-        opacity: 0;
-        transition: .5s; }
     .all-intro .all-image.fade-in {
       opacity: 1;
       transform: scale(1); }
-    .all-intro .all-image:hover .all-in::after {
-      opacity: .8; }
   .all-intro .all-text {
     padding-top: 4rem;
     text-align: center;
@@ -163,6 +149,8 @@ p.principal {
     .all-intro .all-text.fade-in {
       transform: translateX(0);
       opacity: 1; }
+      .all-intro .all-text.fade-in .title {
+        animation: tracking-in-expand 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
     .all-intro .all-text#big-only {
       transform: translateX(20px);
       display: none; }
@@ -261,6 +249,8 @@ p.principal {
   .main-dev.slide-on {
     opacity: 1;
     transform: translateX(0); }
+    .main-dev.slide-on .intro-text {
+      animation: text-focus-in 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
   .main-dev .intro-img {
     background-image: url("../images/sakura-1.jpg");
     background-position: center;
@@ -278,6 +268,8 @@ p.principal {
   .main-photo.slide-on {
     opacity: 1;
     transform: translateX(0); }
+    .main-photo.slide-on .intro-text {
+      animation: text-focus-in 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
   .main-photo .intro-img {
     text-align: left;
     background-image: url("../images/sakura-14.jpg");
@@ -310,7 +302,6 @@ p.principal {
     padding: 2rem 0;
     transition: .5s;
     opacity: 0;
-    transform: scale(0.98);
     will-change: transform;
     user-select: none;
     white-space: nowrap;
@@ -321,10 +312,10 @@ p.principal {
       display: none; }
     .main-gallery .box-in.active {
       cursor: grabbing;
-      cursor: -webkit-grabbing;
-      transform: scale(1); }
+      cursor: -webkit-grabbing; }
     .main-gallery .box-in .box-content {
-      position: relative; }
+      position: relative;
+      transition: .5s; }
       .main-gallery .box-in .box-content::after {
         content: '';
         border: 8px solid black;
@@ -342,8 +333,9 @@ p.principal {
         .main-gallery .box-in .box-content:nth-child(odd)::after {
           left: -6%;
           top: -6%; }
-    .main-gallery .box-in:hover {
-      transform: scale(1); }
+      .main-gallery .box-in .box-content:hover {
+        transform: translate(-40px, 40px) scale(1.3) !important;
+        cursor: pointer; }
   .main-gallery .container-arrow {
     position: absolute;
     width: 60px;
@@ -373,7 +365,8 @@ p.principal {
       color: transparent; }
   .main-gallery.fade-in p.principal {
     transform: translateY(0);
-    opacity: 1; }
+    opacity: 1;
+    animation: tracking-in-contract 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
   .main-gallery.fade-in .box-in {
     opacity: 1; }
   .main-gallery.fade-in .container-arrow {
@@ -482,6 +475,8 @@ p.principal {
   .contact.fade-in {
     transform: translateY(0);
     opacity: 1; }
+    .contact.fade-in p.principal {
+      animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
 
 .header-text h2 {
   animation: show-up-left 1s ease-in both; }
@@ -565,6 +560,35 @@ p.principal {
     transform: scale(1); }
   100% {
     transform: scale(0.8); } }
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0; }
+  40% {
+    opacity: 0.6; }
+  100% {
+    opacity: 1; } }
+
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0; }
+  40% {
+    opacity: 0.6; }
+  100% {
+    letter-spacing: normal;
+    opacity: 1; } }
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0; }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1; } }
 
 @media screen and (min-width: 400px) {
   .main-intro {
