@@ -53,7 +53,7 @@ html(lang="en")
                             p In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica.
                             p In April of 2019 moved to Palma de Mallorca where is now based, working as freelancer frontend.
                             p From 2019 started to learn and developing with Vue.js.
-                            p Tools: HTML/Pug, CSS/Sass, JavaScript, GSAP, Gulp, Git. Basic in: Python, Vue.js, MongoDB.
+                            p Tools: HTML/Pug, CSS/Sass, JavaScript, GSAP, Gulp, Git. Basic in: Python, Vue.js, graphQL, MongoDB.
                 section#photo-intro.intro-toggle.main-photo
                     div.intro-out
                         div.intro-img
@@ -64,102 +64,104 @@ html(lang="en")
                             p In 2018 moved to Spain and started to work with musicians and dancers with photography and videographer.
                             p In 2019 started to work as photographer and videomaker at Triana Productions, flamenco music and dance company.
                             p Tools: Illustrator, Photoshop, InDesign, Premiere Pro, After Effects, DaVinci Resolve, Lightroom.
-            section.main-gallery#main-gallery
-                p.principal Jobs Gallery
-                div.box-in
-                    div.box-content#content-1
-                        img(src="images/flamenco_photo.jpg", alt="")
-                        p Flamenco / Photos
-                    div.box-content.video#WSpCYsdggxk(style="transform: scale(1.2)")
-                        p Louise / Music Video
-                        img(src="images/louise_photo.jpg", alt="")
-                    div.box-content#content-3(style="bottom: 0; top: auto;transform: scale(.8)")
-                        img(src="images/dance_phot.jpg", alt="")
-                        p Dance Shows / Photos
-                    div.box-content.video#2piYXRX3CvI
-                        p Modern Dance / Music Video
-                        img(src="images/modern_photo.jpg", alt="")
-                    div.box-content#content-5(style="transform: scale(1.2);bottom: -32%; top: initial;")
-                        img(src="images/maroco-photo.jpg", alt="")
-                        p Maroko / Photos
-                    div.box-content.video#v-iqCyFATxc
-                        p Erotik Dance / Music Video
-                        img(src="images/erotik_photo.jpg", alt="")
+            //- section.main-gallery#main-gallery
+            //-     p.principal Jobs Gallery
+            //-     div.box-in
+            //-         div.box-content#content-1
+            //-             img(src="images/flamenco_photo.jpg", alt="")
+            //-             p Flamenco / Photos
+            //-         div.box-content.video#WSpCYsdggxk(style="transform: scale(1.2)")
+            //-             p Louise / Music Video
+            //-             img(src="images/louise_photo.jpg", alt="")
+            //-         div.box-content#content-3(style="bottom: 0; top: auto;transform: scale(.8)")
+            //-             img(src="images/dance_phot.jpg", alt="")
+            //-             p Dance Shows / Photos
+            //-         div.box-content.video#2piYXRX3CvI
+            //-             p Modern Dance / Music Video
+            //-             img(src="images/modern_photo.jpg", alt="")
+            //-         div.box-content#content-5(style="transform: scale(1.2);bottom: -32%; top: initial;")
+            //-             img(src="images/maroco-photo.jpg", alt="")
+            //-             p Maroko / Photos
+            //-         div.box-content.video#v-iqCyFATxc
+            //-             p Erotik Dance / Music Video
+            //-             img(src="images/erotik_photo.jpg", alt="")
                 //- div.container-arrow.in-over
                 //-     p.arrow.right <>
                 //- photos in galery style 
+            section#github.github
+                .container
+                    p.principal GitHub Profile
+                    div#gh-profile
             section.contact#contact
                 .container
                     p.principal Leave me a message
-                    p Now looking for new adventures in others countries in Europe
-                    br/
                     p anaclaulp@gmail.com
                     p +34 695749730
                     p linkedin.com/in/ana-claudia-sanz/
 
-            .modals-base
-                .modal#modal-0
-                    .overlay
-                    .modal-content
-                        div.photos-out
-                            div.photos-inner
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")
-                                img.gallery-img(src="https://picsum.photos/250/400?random=1", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?random=2", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")  
-                                img.gallery-img(src="https://picsum.photos/250/400?random=3", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
-                        button.close-modal X
-                        .container-arrow
-                            .arrow <>
-            .modals-base
-                .modal
-                    .overlay
-                    .modal-content
-                        div.video-stretch#modal-1
-                        button.close-modal.video X
-            .modals-base
-                .modal#modal-2
-                    .overlay
-                    .modal-content
-                        div.photos-out
-                            div.photos-inner
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")
-                                img.gallery-img(src="https://picsum.photos/250/400?random=1", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?random=2", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")  
-                                img.gallery-img(src="https://picsum.photos/250/400?random=3", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
-                        button.close-modal X
-            .modals-base
-                .modal
-                    .overlay
-                    .modal-content
-                        div.video-stretch#modal-3
-                        button.close-modal.video X
-            .modals-base
-                .modal
-                    .overlay
-                    .modal-content
-                        div.photos-out
-                            div.photos-inner
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")
-                                img.gallery-img(src="https://picsum.photos/250/400?random=1", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?random=2", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")  
-                                img.gallery-img(src="https://picsum.photos/250/400?random=3", alt="") 
-                                img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
-                        button.close-modal X
-            .modals-base
-                .modal
-                    .overlay
-                    .modal-content
-                        div.video-stretch#modal-5
-                        //- p oh shiting six!
-                        button.close-modal.video X
+            //- .modals-base
+            //-     .modal#modal-0
+            //-         .overlay
+            //-         .modal-content
+            //-             div.photos-out
+            //-                 div.photos-inner
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?random=1", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?random=2", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")  
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?random=3", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
+            //-             button.close-modal X
+            //-             .container-arrow
+            //-                 .arrow <>
+            //- .modals-base
+            //-     .modal
+            //-         .overlay
+            //-         .modal-content
+            //-             div.video-stretch#modal-1
+            //-             button.close-modal.video X
+            //- .modals-base
+            //-     .modal#modal-2
+            //-         .overlay
+            //-         .modal-content
+            //-             div.photos-out
+            //-                 div.photos-inner
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?random=1", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?random=2", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")  
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?random=3", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
+            //-             button.close-modal X
+            //- .modals-base
+            //-     .modal
+            //-         .overlay
+            //-         .modal-content
+            //-             div.video-stretch#modal-3
+            //-             button.close-modal.video X
+            //- .modals-base
+            //-     .modal
+            //-         .overlay
+            //-         .modal-content
+            //-             div.photos-out
+            //-                 div.photos-inner
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?random=1", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?random=2", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="")  
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?random=3", alt="") 
+            //-                     img.gallery-img(src="https://picsum.photos/250/400?grayscale", alt="") 
+            //-             button.close-modal X
+            //- .modals-base
+            //-     .modal
+            //-         .overlay
+            //-         .modal-content
+            //-             div.video-stretch#modal-5
+            //-             //- p oh shiting six!
+            //-             button.close-modal.video X
         footer
             //- contact informations
             script(src="js/src/js/app.min.js")

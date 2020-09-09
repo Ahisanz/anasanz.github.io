@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 // TRANSLATE INTRO ON CLICK
 var devToggle = document.getElementById('dev-toggle');
 var photoToggle = document.getElementById('photo-toggle');
@@ -8,6 +10,7 @@ var mainPhoto = document.getElementById('photo-intro');
 var introToggle = document.querySelectorAll('.intro-toggle');
 var secMenu = document.querySelectorAll('.sec-menu');
 var menuSec = document.getElementById('menu-sec');
+
 
 
 function changeClass(){
@@ -37,6 +40,7 @@ window.onload = function(){
     photoSec.addEventListener( 'click', changeClass);
 
 
+
     // SCROLLMAGIC CSS ANIMATION (DONT WORK IN IE9) D=
     var controller = new ScrollMagic.Controller();
 
@@ -48,72 +52,84 @@ window.onload = function(){
                 .setClassToggle("#menu-sec","fade-in")
                 .addTo(controller);
 
-    var scene3 = new ScrollMagic.Scene({triggerElement: "#main-gallery", offset: -150})
-                .setClassToggle("#main-gallery","fade-in")
-                .addTo(controller);
+    // var scene3 = new ScrollMagic.Scene({triggerElement: "#main-gallery", offset: -150})
+    //             .setClassToggle("#main-gallery","fade-in")
+    //             .addTo(controller);
     
-    var scene4 = new ScrollMagic.Scene({triggerElement: "#contact", offset: -250})
-                .setClassToggle("#contact","fade-in")
+    // var scene4 = new ScrollMagic.Scene({triggerElement: "#contact", offset: -250})
+    //             .setClassToggle("#contact","fade-in")
+    //             .addTo(controller);
+   
+    var scene5 = new ScrollMagic.Scene({triggerElement: "#github", offset: -250})
+                .setClassToggle("#github","fade-in")
                 .addTo(controller);
+
+    // GET DISPLAY GITHUB PROFILE
+    function getUser() {
+        axios.get('https://api.github.com/users/Ahisanz')
+        .then(res => showProfile(res))
+        .catch(err => console.log(err))
+    };
+    getUser()
 
     // Modal Opener Base 
 
-    var triggers = document.getElementsByClassName('box-content');
-    var btnArray = Array.from(triggers).entries();
-    var modals = document.getElementsByClassName('modal');
-    var closeBtns = document.getElementsByClassName('close-modal');
+//     var triggers = document.getElementsByClassName('box-content');
+//     var btnArray = Array.from(triggers).entries();
+//     var modals = document.getElementsByClassName('modal');
+//     var closeBtns = document.getElementsByClassName('close-modal');
 
-    for (let [index, trigger] of btnArray) {
-        let triggerIndex = index;
+//     for (let [index, trigger] of btnArray) {
+//         let triggerIndex = index;
 
-        function toggleModal() {
-            modals[triggerIndex].classList.toggle("show-modal");
-            var body = document.getElementById('body');
-            body.classList.toggle('modal-open');
-            if(this.classList.contains('box-content') && this.classList.contains('video')) {
-                var videoId = trigger.id;
-                var modalParent = document.getElementById('modal-' + triggerIndex +'');
-                var videoIframe = '<iframe enablejsapi=1 src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>'
-                modalParent.innerHTML = modalParent.innerHTML + videoIframe;
-            } else if (this.classList.contains('close-modal') && this.classList.contains('video')) {
-                var modalParent = document.getElementById('modal-' + triggerIndex + '');
-                modalParent.innerHTML = '';
-            }            
+//         function toggleModal() {
+//             modals[triggerIndex].classList.toggle("show-modal");
+//             var body = document.getElementById('body');
+//             body.classList.toggle('modal-open');
+//             if(this.classList.contains('box-content') && this.classList.contains('video')) {
+//                 var videoId = trigger.id;
+//                 var modalParent = document.getElementById('modal-' + triggerIndex +'');
+//                 var videoIframe = '<iframe enablejsapi=1 src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>'
+//                 modalParent.innerHTML = modalParent.innerHTML + videoIframe;
+//             } else if (this.classList.contains('close-modal') && this.classList.contains('video')) {
+//                 var modalParent = document.getElementById('modal-' + triggerIndex + '');
+//                 modalParent.innerHTML = '';
+//             }            
 
-        }
-        trigger.addEventListener("click", toggleModal);
-        closeBtns[triggerIndex].addEventListener("click", toggleModal);
-  }
+//         }
+//         trigger.addEventListener("click", toggleModal);
+//         closeBtns[triggerIndex].addEventListener("click", toggleModal);
+//   }
 
     // HORIZONTAL SCROLL GALLERY ITEMS
 
-    const sliderGallery = document.querySelector('.box-in');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+    // const sliderGallery = document.querySelector('.box-in');
+    // let isDown = false;
+    // let startX;
+    // let scrollLeft;
 
-    sliderGallery.addEventListener('mousedown', (e) => {
-        isDown = true;
-        sliderGallery.classList.add('active');
-        startX = e.pageX - sliderGallery.offsetLeft;
-        scrollLeft = sliderGallery.scrollLeft;
-    });
-    sliderGallery.addEventListener('mouseleave', () => {
-        isDown = false;
-        sliderGallery.classList.remove('active');
-    });
-    sliderGallery.addEventListener('mouseup', () => {
-        isDown = false;
-        sliderGallery.classList.remove('active');   
-    });
-    sliderGallery.addEventListener('mousemove', (e) => {
-        if(!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - sliderGallery.offsetLeft;
-        const walk = (x - startX) * 3; //scroll-fast
-        sliderGallery.scrollLeft = scrollLeft - walk;
-        // console.log(walk);
-    });
+    // sliderGallery.addEventListener('mousedown', (e) => {
+    //     isDown = true;
+    //     sliderGallery.classList.add('active');
+    //     startX = e.pageX - sliderGallery.offsetLeft;
+    //     scrollLeft = sliderGallery.scrollLeft;
+    // });
+    // sliderGallery.addEventListener('mouseleave', () => {
+    //     isDown = false;
+    //     sliderGallery.classList.remove('active');
+    // });
+    // sliderGallery.addEventListener('mouseup', () => {
+    //     isDown = false;
+    //     sliderGallery.classList.remove('active');   
+    // });
+    // sliderGallery.addEventListener('mousemove', (e) => {
+    //     if(!isDown) return;
+    //     e.preventDefault();
+    //     const x = e.pageX - sliderGallery.offsetLeft;
+    //     const walk = (x - startX) * 3; //scroll-fast
+    //     sliderGallery.scrollLeft = scrollLeft - walk;
+    //     // console.log(walk);
+    // });
 
     //GALLERY IMG SCROLL TEST
  
@@ -191,3 +207,27 @@ function scrollSmooth() {
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 };
+
+// show GitHub Profile
+function showProfile(res) {
+    const data = res.data;
+    document.getElementById('gh-profile').innerHTML = `
+    <div>
+        <img src="${data.avatar_url}" class="gh-img"/>
+    </div>
+    <div>
+        <p class="gh-login">${data.login}</p>
+        <a href="${data.html_url}" class="">Github Profile</a>
+        <br/>
+        <a href="https://github.com/Ahisanz/anasanz.github.io">Github Website Repository</a>
+        <p id="gh-hirable" ></p>
+    </div>
+    `
+    if(data.hirable = true){
+        document.getElementById('gh-hirable').innerHTML = 'Hirable';
+        document.getElementById('gh-hirable').classList.add('hirable')
+
+    } else {
+        document.getElementById('gh-hirable').innerHTML = 'Busy'
+    }
+}

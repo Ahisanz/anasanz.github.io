@@ -10,6 +10,8 @@ const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
 
+let autoprefixBrowsers = ['> 1%', 'last 2 versions', 'firefox >= 4', 'safari 7', 'safari 8', 'IE 8', 'IE 9', 'IE 10', 'IE 11'];
+
 var jsSRC = 'src/js/app.js';
 var jsFILES = [jsSRC];
 
@@ -17,7 +19,7 @@ var jsFILES = [jsSRC];
 function css(cb) {
     gulp.src('src/sass/app.scss')
     .pipe(sass())
-    // .pipe(autoprefixer())
+    .pipe(autoprefixer())
     .pipe(gulp.dest('dest/css'))
     cb();
 };

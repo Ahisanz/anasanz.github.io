@@ -160,7 +160,7 @@ p.principal {
         .all-in {
             height: 300px;
             width: 200px;
-            background-image: url('../images/IMG_20200729_002055_2.jpg');
+            background-image: url('../images/IMG_20200729_002055_2p.jpg');
             background-position: center;
             background-size: cover;
             transition: all .3s ease-in-out;
@@ -617,20 +617,55 @@ p.principal {
         }
     }
 }
-.contact {
+// Github Profile
+.github{
     transform: translateY(-30px);
     transition: .5s;
     opacity: 0;
-    .container {
-        padding: 1rem 1rem 6rem 1rem;
-    }
     &.fade-in {
         transform: translateY(0);
         opacity: 1;
+    }
+    .container{
+        margin: 0 auto;
+        max-width: 768px;
         p.principal {
-            animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            text-align: center;
         }
     }
+    #gh-profile {
+        text-align: center;
+        .gh-login {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .gh-img{
+            height: 300px;
+            width: auto;
+        }
+        #gh-hirable {
+            color: red;
+            &.hirable {
+                color: greenyellow;
+            }
+        }
+    }
+}
+
+.contact {
+    // transform: translateY(-30px);
+    // transition: .5s;
+    // opacity: 0;
+    .container {
+        padding: 1rem 1rem 6rem 1rem;
+    }
+    // &.fade-in {
+    //     transform: translateY(0);
+    //     opacity: 1;
+    //     p.principal {
+    //         animation: tracking-in-expand 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    //     }
+    // }
 
 }
 // ANIMATIONS
@@ -855,8 +890,20 @@ p.principal {
     }
     .all-intro {
         display: grid;
+        display: -ms-grid;
         grid-auto-flow: column;
+        -ms-grid-columns: 1fr 1fr 1fr;
         padding: 5rem 0;
+    }
+    .all-image {
+        -ms-grid-column: 2;
+    }
+    .all-text{
+        -ms-grid-column: 3; 
+        &#animate-text{
+            -ms-grid-column: 1;
+
+        }
     }
     .all-intro .all-image::after {
         width: 230px;
@@ -866,7 +913,9 @@ p.principal {
     }
     .main-intro .intro-out {
         display: grid;
+        display: -ms-grid;
         grid-auto-flow: column;
+        -ms-grid-columns: 1fr 1fr;
     }
     .main-intro .intro-text {
         width: 375px;
