@@ -1025,3 +1025,26 @@ p.principal {
         max-width: 900px;
     }
 }
+
+#ie-only {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 768px;
+    h1 {
+        font-size: 4rem;
+        margin: 2rem;
+    }
+    h2 {
+        margin: 1.5rem;
+    }
+    image {
+        margin-bottom: .5rem;
+    }
+    p {
+        margin-bottom: .5rem;
+        &.about {
+            margin: 0 auto 0.5rem auto;
+            max-width: 450px;
+        }
+    }
+}
