@@ -653,9 +653,9 @@ h2 {
 // intro animation
 .header {
     &-text {
-        p {
-            animation: show-up-left 1s ease-in both; 
-        }
+        // p {
+        //     animation: show-up-left 1s ease-in both; 
+        // }
         h1 {
             animation: show-up-right 1s ease-out both .8s;
         }
