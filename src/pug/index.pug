@@ -10,45 +10,50 @@ html(lang="en")
     body#body
         header.header
             div.header-text
-                h2 Hello there
+                p.title Hello there
                 h1 I'm Ana Sanz
             div.header-dev
                 a(href="#" id="dev-toggle")
-                  h3 FrontEnd Developer              
+                    h2 FrontEnd Developer              
             div.header-photo
                 a(href="#" id="photo-toggle")
-                    h3 Photographer</br>Videomaker 
+                    h2 Photographer<br/>Videomaker 
         main
             section.all-intro#trigger-intro
                 div.all-image#animate-image
                     div.all-in
+                        img(src="./images/IMG_20200729_002055_2p.jpg", alt="photo of Ana Sanz(me)" class="all-in-img")
                 div.all-text#animate-text
-                    p.title Living in Palma de Mallorca, Spain
+                    h2 About
+                    h3 Living in Palma de Mallorca, Spain
                     p Self and quick learner, organized, versatile, curious and dedicated.
                     p Passionate about technology innovations, sci-fi, games, books, human history, ecology, gastronomy.
                     p Since 2012 working as freelancer on Graphic/WebDesign and Frontend.
                     p Native brazilian portuguese, advanced english and spanish.
                     p College in Product Design at Belas Artes de São Paulo.
                 .all-text#big-only
-                    p.title Side Quests
+                    h2 More About
+                    h3 Side Quests
                     p In 2013 started short-courses in frontend and self taught code with Python, MySQL, Angularjs, MongoDB.
                     p In the second semester of 2015 started a Master degree in Strategic and Innovation Design, but had to close to move to Japan.
                     p 2016 to 2018 lived in Japan working together diferents Cultural Centers.
                     p In 2016 started to self taught photography and videomaking.
                     p From 2019 working also as Flamenco Dancer in the hotels of Mallorca, Spain.
             section.main-intro#menu-sec
+                h2 Professional Experience
                 nav.menu-sub
                     ul
                         li
-                            a(href='#' id='dev-sec' class="sec-menu selected") FrontEnd Developer
+                            a(href='#' id='dev-sec' class="sec-menu selected" role="button") FrontEnd Developer
                         li 
-                            a(href='#' id='photo-sec' class='sec-menu') Photographer/VideoMaker
+                            a(href='#' id='photo-sec' class='sec-menu' role="button") Photographer/VideoMaker
                     //- menu for toggle also photo and webdeveloper
                 section#dev-intro.intro-toggle.main-dev.slide-on
                     div.intro-out
                         div.intro-img
+                            img(src="./images/sakura-1.jpg", alt="tango dancers, couple hugging")
                         div.intro-text
-                            p.principal Frontend Developer since 2013
+                            h3 Frontend Developer since 2013
                             p Worked at the brazilian startup Mendelics for 2 years, 2013 and 2014, as graphic designer/art director and webdesigner/frontend developer.
                             p In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica.
                             p In April of 2019 moved to Palma de Mallorca where is now based, working as freelancer frontend.
@@ -57,8 +62,9 @@ html(lang="en")
                 section#photo-intro.intro-toggle.main-photo
                     div.intro-out
                         div.intro-img
+                          img(src="./images/sakura-14.jpg", alt="tango dancers, woman on man arms")
                         div.intro-text
-                            p.principal Photographer Videomaker since 2015
+                            h3 Photographer Videomaker since 2015
                             p In Japan, worked from 2016 to early 2017, at Tiempo Iberoamericano with video editing and filming, photography. 
                             p And from 2017 to early 2018 at Flamenco Studio Los Lunares with video editing and filming, photography and design.
                             p In 2018 moved to Spain and started to work with musicians and dancers with photography and videographer.
@@ -90,14 +96,17 @@ html(lang="en")
                 //- photos in galery style 
             section#github.github
                 .container
-                    p.principal GitHub Profile
+                    h2 GitHub Profile
+                    h3 Code Projects
                     div#gh-profile
             section.contact#contact
                 .container
-                    p.principal Leave me a message
+                    h2 Contact
+                    h3 Leave me a message
                     p anaclaulp@gmail.com
                     p +34 695749730
                     a(href="https://linkedin.com/in/ana-claudia-sanz/") LinkedIn
+                    a(href="https://landing.jobs/profile/2e3cb6703e48a889148669") Landing.Jobs
 
             //- .modals-base
             //-     .modal#modal-0

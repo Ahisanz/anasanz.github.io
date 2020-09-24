@@ -2,7 +2,6 @@ import axios from 'axios';
 
 
 if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-    console.log('heeyy Im IE')
     document.getElementById('body').innerHTML = "";
     document.getElementById('body').innerHTML = `
     <div id="ie-only">
@@ -11,7 +10,7 @@ if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
         <p>but...</p>
         <p>I can share some information about me</p>
         <h2>I'm Ana Sanz, Frontend Developer</h2>
-        <img src="images/IMG_20200729_002055_2p.jpg" style="width: auto; height:250px" >
+        <img src="images/IMG_20200729_002055_2p.jpg" style="width: auto; height:250px"  alt="Photo of Ana Sanz (me)"/>
         <p class="about">Self and quick learner, organized, versatile, curious and dedicated. Passionate about technology innovations, sci-fi, games, books, human history, ecology, gastronomy. Since 2012 working as freelancer on Graphic/WebDesign and Frontend.</p>
         <p>If you want to know more about me, feel free to download my CV, check my Linkedin or send me a email</p>
         <a href="images/cvi_ana_sanz_en.pdf">Download CV</a>
@@ -235,13 +234,13 @@ function showProfile(res) {
     const data = res.data;
     document.getElementById('gh-profile').innerHTML = `
     <div>
-        <img src="${data.avatar_url}" class="gh-img"/>
+        <img src="${data.avatar_url}" class="gh-img" alt="Photo of Ana Sanz (me)"/>
     </div>
     <div>
         <p class="gh-login">${data.login}</p>
         <a href="${data.html_url}" class="">Github Profile</a>
-        <br/>
         <a href="https://github.com/Ahisanz/anasanz.github.io">Github Website Repository</a>
+        <a href="https://github.com/Ahisanz/side_projects">Github Basics Projects Repository</a>
         <p id="gh-hirable" ></p>
     </div>
     `

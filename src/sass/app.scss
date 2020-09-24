@@ -27,19 +27,32 @@ $base-color: #BFB188;
   list-style: none;
   cursor: crosshair;
  }
+ :focus {
+     outline: 5px solid $accent-color;
+     outline-offset: 2px;
+ }
  a {
      cursor: pointer;
+     display: block;
+     padding-top: 5px;
+    &:hover {
+        color: $base-color;
+    }
  }
  body.modal-open {
      height: 100vh;
      overflow-y: hidden;
  }
-p.principal {
+p.principa, h3 {
     font-size: 2.3rem;
     font-family: $playfair;
     font-weight: 700;
-    line-height: .8;
+    line-height: 1;
     margin-bottom: 2rem;
+}
+h2 {
+    font-size: 1.1rem;
+    font-weight: normal;
 }
 
 //  HEADER
@@ -60,13 +73,11 @@ p.principal {
     &-text {
         margin: 3rem auto 5rem auto;
         text-align: center;
-        h1, h2 {
+        h1 {
           font-family : $playfair;
           line-height: .9;
           cursor: crosshair;
-        }
-        h1 {
-            font-size: 3rem;
+          font-size: 3rem;
         }
     }
     &-dev,  &-photo {
@@ -84,7 +95,7 @@ p.principal {
             width: auto;
             margin: 0 auto;
         }
-        h3 {
+        h2 {
             font-family: $playfair;
             color: $base-color;
             font-size: 3rem;
@@ -97,7 +108,7 @@ p.principal {
         &:hover {
             transform: scale(1.1);
             background-image : url('https://picsum.photos/1024/250');
-            h3 {
+            h2 {
                 color: $accent-color;
                 transform: translateX(30px)
             }
@@ -107,7 +118,7 @@ p.principal {
         background-image : url('../images/percusion-11.jpg');
         background-position: center;
         margin-left : 1rem;
-        h3 {
+        h2 {
             bottom: -1rem;
             left: -5rem;
             width: 426px;
@@ -121,7 +132,7 @@ p.principal {
         margin-right : 1rem;
         background-image : url('../images/sakura-17.jpg');
         background-position: top;
-        h3 {
+        h2 {
             color: $base-color;
             right: -1.2rem;
             top: 1rem;
@@ -129,7 +140,7 @@ p.principal {
         &:hover {
             background-image : url('../images/flamenco-19.jpg');
             background-position: center;
-            h3 {
+            h2 {
                 color: $accent-color;
                 transform: translateX(-30px)
             }
@@ -158,42 +169,19 @@ p.principal {
             z-index: -1;
         }
         .all-in {
-            height: 300px;
-            width: 200px;
-            background-image: url('../images/IMG_20200729_002055_2p.jpg');
-            background-position: center;
-            background-size: cover;
             transition: all .3s ease-in-out;
             transform: scale(1);
             margin: 0 auto;
             position: relative;
-            // &::after {
-            //     content: '';
-            //     background-image: url('../images/IMG_20200729_002055_2p.jpg');
-            //     background-position: center;
-            //     background-size: cover;
-            //     position: absolute;
-            //     height: 300px;
-            //     width: 200px;
-            //     top: 0;
-            //     right: 0;
-            //     opacity: 0;
-            //     transition: .5s;
-            // }
+            &-img{
+                height: 280px;
+                width: auto;
+            }
         }
         &.fade-in{
             opacity: 1;
             transform: scale(1) ;
         }
-        // &:hover {
-            // animação para hover 
-            // .all-in::after {
-            //     opacity: .8;
-            //     // background-image: url('../images/IMG_20200729_002055_2p.jpg');
-                // background-position: center;
-                // background-size: cover;
-            // }
-        // }
     }
     .all-text {
         padding-top: 4rem;
@@ -202,6 +190,10 @@ p.principal {
         transition: all .4s ease-out ;
         transform: translateX(-40px);
         opacity: 0;
+        h2 {
+            font-weight: normal;
+            margin-bottom: 1rem;
+        }
         p {
             padding-bottom: .5rem;
             &.title {
@@ -239,21 +231,25 @@ p.principal {
         overflow: hidden;
         opacity: 0;
         transition: .8s;
+        h2{
+            text-align: center;
+        }
         .intro-out {
             padding: 1rem;
         }
         .intro-img {
-            text-align: right;
+            height: 350px;
+            width: 220px;
+            margin: 0 auto;
+            overflow: hidden;
             position: relative;
-            &::after {
-                content: '';
-                height: 150px;
-                width: 220px;
-                top: 50%;
-                right: 10%;
-                transform: translate(0%, -50%);
+            img{
+                height: 350px;
+                width: auto;
                 position: absolute;
-                z-index: -9;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         }
         .intro-text {
@@ -336,8 +332,8 @@ p.principal {
         width: 100%;
         position: absolute;
     }
+
     &-dev {
-        // background-color: $accent-color;
         opacity: 0;
         transform : translateX(-100%);
         transition: .5s cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -348,20 +344,9 @@ p.principal {
                 animation: text-focus-in .8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
             }
         }
-        .intro-img {
-            background-image: url('../images/sakura-1.jpg');
-            background-position: center;
-            background-size: cover;
-            height: 350px;
-            width: 220px;
-            margin: 0 0 0 auto;
-            &::after {
-                border: 8px solid $accent-color;
-            }
-        }
+
     }
     &-photo {
-        // background-color: $base-color;
         opacity: 0;
         transform : translateX(100%);
         transition: .5s cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -372,25 +357,12 @@ p.principal {
                 animation: text-focus-in .8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
             }
         }
-        .intro-img {
-            text-align: left;
-            background-image: url('../images/sakura-14.jpg');
-            background-position: -113px center;
-            background-size: cover;
-            height: 350px;
-            width: 220px;
-            margin: 0 auto 0 0;
-            &::after {
-                left: 10%;
-                right: auto;
-                border: 8px solid $base-color;
-            }
-        }
         .intro-text {
             text-align: right;
         }
     }
 }
+// main gallery videos and photographies
 .main-gallery {
     padding: 1rem 0;
     position: relative;
@@ -622,6 +594,14 @@ p.principal {
     transform: translateY(-30px);
     transition: .5s;
     opacity: 0;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    h2, h3 {
+        text-align: center;
+    }
+    h2 {
+        margin-bottom: 1rem;
+    }
     &.fade-in {
         transform: translateY(0);
         opacity: 1;
@@ -673,7 +653,7 @@ p.principal {
 // intro animation
 .header {
     &-text {
-        h2 {
+        p {
             animation: show-up-left 1s ease-in both; 
         }
         h1 {
@@ -683,7 +663,7 @@ p.principal {
     &-dev {
         animation: show-up-right 1s ease-in-out both 1.5s;
         a {
-            h3{
+            h2{
                 animation: show-up-left 1s ease-in-out both 1.5s;
             }
         }
@@ -691,7 +671,7 @@ p.principal {
     &-photo{
         animation: show-up-left 1s ease-in-out both 2s;
         a {
-            h3 {
+            h2 {
                 animation: show-up-right 1s ease-in-out both 2s;
             }
         }
@@ -832,7 +812,7 @@ p.principal {
 @media screen and (min-width: 550px) {
     .all-intro .all-image::after {
         width: 45%;
-        top: 82%;
+        top: 77%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -894,15 +874,17 @@ p.principal {
         grid-auto-flow: column;
         -ms-grid-columns: 1fr 1fr 1fr;
         padding: 5rem 0;
-    }
-    .all-image {
-        -ms-grid-column: 2;
+        .all-image {
+            -ms-grid-column: 2;
+            &::after{
+                top: 67%;
+            }
+        }
     }
     .all-text{
         -ms-grid-column: 3; 
         &#animate-text{
             -ms-grid-column: 1;
-
         }
     }
     .all-intro .all-image::after {
@@ -961,7 +943,7 @@ p.principal {
     }
     .header {
         &-dev {
-            h3{
+            h2{
                 color: #fff;
                 bottom: 3rem;
                 left: -3rem;
@@ -971,14 +953,14 @@ p.principal {
             }
             &:hover {
                 // border-radius: 15%;
-                h3 {
+                h2 {
                     color: #fff;
                     opacity: 1;
                 }
             }
         }
         &-photo {
-            h3 {
+            h2 {
                 color: #fff;
                 right: 2rem;
                 top: 2rem;
@@ -988,7 +970,7 @@ p.principal {
             }
             &:hover {
                 // border-radius: 25%;
-                h3 {
+                h2 {
                     color: #fff;
                     opacity: 1;
                 }
