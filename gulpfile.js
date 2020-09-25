@@ -50,11 +50,11 @@ function js(cb) {
 }
 
 
-function images(cb) {
-    gulp.src('src/images')
-    .pipe(gulp.dest('dest/images'))
-    cb();
-}
+// function images(cb) {
+//     gulp.src('src/images')
+//     .pipe(gulp.dest('dest/images'))
+//     cb();
+// }
 
 // function fonts(cb) {
 //     gulp.src('src/fonts')
@@ -65,7 +65,8 @@ function images(cb) {
 function watch_files() {
     gulp.watch('src/sass/app.scss', css)
     gulp.watch('src/pug/**/*.pug', html)
-    gulp.watch('src/js/**/*.js', js)
+    gulp.watch('src/js/*.js', js)
+    // gulp.watch('src/fonts/*', fonts)
     // watch images + fonts
 };
 
@@ -76,7 +77,7 @@ function watch_files() {
 gulp.task("css", css);
 gulp.task("html", html);
 gulp.task("js", js);
-gulp.task("images", images);
+// gulp.task("images", images);
 // gulp.task("fonts", fonts);
-gulp.task("default", gulp.parallel(css, html, js, images));
+gulp.task("default", gulp.parallel(css, html, js));
 gulp.task("watch", watch_files);

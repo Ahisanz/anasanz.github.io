@@ -1,0 +1,67 @@
+// 
+// LOADING PAGE
+// 
+
+
+
+.main {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.header {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    transition: opacity .6s;
+    &__image {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        &--logo{
+            z-index: 1;
+        }
+    }
+    &__bgimage {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        animation: fadeInOut .8s linear forwards;
+        opacity: 0;
+        z-index: -1;
+        &--flower{
+            
+        }
+        &--mandala{
+            animation-delay: .8s;
+        }
+        &--fireworks{
+            animation-delay: 1.6s;
+        }
+        &--sun{
+            animation-delay: 2.4s;
+        }
+        &--music{
+            animation-delay: 3.2s;
+        }
+        &--rectangle{
+            animation-delay: 4s;
+        }
+    }
+}
+
+// ANIMATION LOADING PAGE
+@keyframes fadeInOut {
+    50% {
+        opacity: 1;
+    }
+}
