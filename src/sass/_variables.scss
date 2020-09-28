@@ -1,0 +1,38 @@
+
+// 
+// VARIABLES
+// 
+$display-slab--bolditalic: 'Domaine-Sans-Italic';
+$display-slab--bold: 'Domaine-Sans';
+$serif--regular: 'zilla_slabregular' ;
+$serif--bolditalic: 'zilla_slabbold_italic' ;
+$sans-serif--regular: 'Noah-Regular';
+$sans-serif--bold: 'Noah-Bold';
+$sans-serif--bolditalic: 'Noah-BoldItalic';
+// 
+// VARIABLES COLORS
+// 
+$primary-color: #000;
+$grey-color: #ededed;
+$purple-color: #99789E;
+$red-color: #F48167;
+$orange-color: #F9AF77;
+$yellow-color: #FFE65E;
+$green-color: #43B871;
+$blue-color: #57CBF5;
+
+// 
+// EXTENDS BASES
+// 
+@mixin object-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin circle-base {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}

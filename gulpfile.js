@@ -17,7 +17,7 @@ var jsFILES = [jsSRC];
 
 
 function css(cb) {
-    gulp.src('src/sass/app.scss')
+    gulp.src('src/sass/**.scss')
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(gulp.dest('dest/css'))
@@ -63,7 +63,7 @@ function js(cb) {
 // }
 
 function watch_files() {
-    gulp.watch('src/sass/app.scss', css)
+    gulp.watch('src/sass/**.scss', css)
     gulp.watch('src/pug/**/*.pug', html)
     gulp.watch('src/js/*.js', js)
     // gulp.watch('src/fonts/*', fonts)

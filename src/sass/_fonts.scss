@@ -1,0 +1,51 @@
+
+// 
+// FONTS SETUP
+// 
+@font-face {
+    font-family: 'zilla_slabbold_italic';
+    src: url('../fonts/zillaslab-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/zillaslab-bolditalic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'zilla_slabregular';
+    src: url('../fonts/zillaslab-regular-webfont.woff2') format('woff2'),
+         url('../fonts/zillaslab-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noah-Bold';
+    src: url('../fonts/Noah-Bold.woff2') format('woff2'),
+         url('../fonts/Noah-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noah-BoldItalic';
+    src: url('../fonts/Noah-BoldItalic.woff2') format('woff2'),
+         url('../fonts/Noah-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Noah-Regular';
+    src: url('../fonts/Noah-Regular.woff2') format('woff2'),
+         url('../fonts/Noah-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Domaine-Sans-Italic';
+    src: url('../fonts/Domaine_Sans_Display_Extrabold_Italic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Domaine-Sans';
+    src: url('../fonts/DomaineDispNar-Extrabold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}

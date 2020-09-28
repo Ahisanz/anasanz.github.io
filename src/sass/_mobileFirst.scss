@@ -1,0 +1,212 @@
+//
+//  HEADER FEATURES
+//
+.header {
+  padding-top: 1.5rem;
+  &__logo {
+    margin: 0 auto;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    img {
+      display: block;
+      width: 100px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+  &__image {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    // background-image: url('../images/header/bg-all.png');
+    // background-position: center center;
+    // background-size: cover;
+    &--bg {
+        display: block;
+    }
+    &--grafismo {
+      width: 90%;
+      height: auto;
+      @include object-center;
+    }
+    &--maismenos {
+      width: 95%;
+      height: auto;
+      @include object-center;
+    }
+    &--tuba {
+      width: 100%;
+      height: auto;
+      top: -12%;
+      left: -12%;
+    }
+    &--traco {
+      @include object-center;
+      width: 50%;
+      height: auto;
+    }
+  }
+  &-parallax__img {
+    position: absolute;
+  }
+  &__text {
+    position: absolute;
+    color: #fff;
+    bottom: 5%;
+    left: 5%;
+  }
+  &__title {
+    font-family: $display-slab--bolditalic;
+    font-size: 3rem;
+    width: 200px;
+    line-height: .9;
+    position: relative;
+
+  }
+  &__subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+//
+// ABOUT SECTION FEATURES
+//
+.about {
+  &-image {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 2rem;
+    &__img {
+      margin: 0 auto;
+      display: block;
+    }
+    &__icons {
+      position: absolute;
+      z-index: 1;
+      width: 35%;
+      height: auto;
+      top: 0%;
+      left: 25%;
+      &--mandala {
+        bottom: -12%;
+        left: 44%;
+        top: auto;
+        width: 40%;
+      }
+    }
+  }
+  &-text {
+    max-width: 90%;
+    margin: 0 auto;
+    &__second {
+      transition: all 0.3s ease-out;
+    }
+  }
+}
+//
+// EXPERIENCE FEATURES
+//
+.experience {
+  background-color: $red-color;
+  color: #fff;
+  &-text {
+    max-width: 90%;
+    margin: 0 auto 2rem auto;
+    padding-top: 2rem;
+    &__second {
+      display: none;
+    }
+  }
+  &-image {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 2rem;
+    &--frontend {
+      margin: 0 auto;
+      display: block;
+    }
+    &__icons {
+      position: absolute;
+      z-index: 1;
+      width: 35%;
+      height: auto;
+      @include object-center();
+      &--sun {
+        top: auto;
+        bottom: -30%;
+        left: 40%;
+        width: 45%;
+      }
+      &--rectangle {
+        top: 20%;
+        left: 80%;
+      }
+      &--flower {
+        top: auto;
+        bottom: -30%;
+        left: 70%;
+        width: 45%;
+      }
+      &--music {
+        top: 20%;
+        left: 20%;
+      }
+    }
+  }
+  .main__description::after {
+    border-bottom: #fff 3px solid;
+    border-left: #fff 3px solid;
+  }
+  .text-color {
+    color: $orange-color;
+    background-color: #fff;
+  }
+}
+
+//
+// GITHUB PROFILE
+//
+.github {
+  max-width: 90%;
+  margin: 0 auto;
+  padding-top: 2rem;
+  &-profile {
+    &__hirable {
+      &.hirable {
+        color: $green-color;
+      }
+    }
+    &__img {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  .text-color {
+    background-color: $blue-color;
+    color: #000;
+  }
+  .main__description::after {
+    border-bottom: $blue-color 3px solid;
+    border-left: $blue-color 3px solid;
+  }
+}
+
+//
+// FOOTER FEATURES
+//
+.footer {
+  background-color: $yellow-color;
+  padding-top: 2rem;
+  &-text {
+    margin: 0 auto;
+    max-width: 90%;
+    display: block;
+  }
+  .main__description::after {
+    border-bottom: #000 3px solid;
+    border-left: #000 3px solid;
+  }
+}

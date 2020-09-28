@@ -4,23 +4,34 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(name="description" content="Ana Sanz, frontend developer, based in Spain, Website Portfolio")
-        link(rel="stylesheet", href="css/app.css")
+        link(rel="stylesheet", href="css/style.css")
         title Ana Sanz | WebPortfolio
     body
+        //- .viewer-circle 
+        //-     p.viewer-circle__text.viewer-circle__text--frontend Frontend Developer
+        //-     p.viewer-circle__text.viewer-circle__text--videomaker Videomaker
         header.section-base.header
             .header__logo
                 img(src="./images/SVG/logo-vertical.svg",  alt="Ana Sanz Logo")
             .header__image
-                .header__text
-                    h2.header__subtitle Hello
-                    h1.header__title I'm Ana Sanz
-                    .header__circle 
-                        p.header__description.header--frontend Frontend Developer
-                        p.header__description.header--videomaker Videomaker
                 picture
-                 img(src="./images/opening-bgsmall.png", alt="Flamenco dancer with red dress", 
-                 size="320px, 1024px",
-                 srcset="./images/opening-bgsmall.png 640w, ./images/opening-bg.png  1024w")
+                    img.header__image--bg(src="./images/header/bg-allsmall.png", alt="", size="320px, 1024px", srcset="./images/header/bg-allsmall.png 640w, ./images/header/bg-all.png  1024w")    
+                .header-parallax
+                    img.header-parallax__img.header__image--grafismo(src="./images/header/grafis.png", alt="")    
+                    img.header-parallax__img.header__image--maismenos(src="./images/header/maismenos.png", alt="")    
+                    img.header-parallax__img.header__image--tuba(src="./images/header/tuba.png", alt="")    
+                    img.header-parallax__img.header__image--traco(src="./images/header/traco.png", alt="")    
+                .header__text
+                    h1.header__subtitle Hello
+                    h2.header__title I'm Ana Sanz
+                //- .header__text
+                //-     h2.header__subtitle Hello
+                //-     h1.header__title I'm Ana Sanz
+                  
+                //- picture
+                //-  img(src="./images/bg-opening2small.png", alt="Flamenco dancer with red dress", 
+                //-  size="320px, 1024px",
+                //-  srcset="./images/bg-opening2small.png 640w, ./images/bg-opening2.png  1024w")
         main.section-base.main
             section.section-base.about
                 .about-image
@@ -35,24 +46,24 @@ html(lang="en")
                         p Living in Palma de Mallorca, Spain
                         p Self and quick learner, organized, versatile, curious and dedicated.
                         p Passionate about technology innovations, sci-fi, games, books, human history, ecology, gastronomy.
-                        p Since 2012 working as freelancer on Graphic/WebDesign and Frontend.
+                        p.text-color Since 2012 working as freelancer on Graphic/WebDesign and Frontend.
                         p Native brazilian portuguese, advanced english and spanish.
                         p College in Product Design at Belas Artes de São Paulo.
-                    button.button-plus.button-about +
-                    .about-text__second
+                    button.button-plus.button-about#button-moreabout( aria-expanded="false" aria-control="more-about") +
+                    .about-text__second#more-about(style="display: none" role="region" aria-labeledby="button-moreabout")
                         h3.main__description Side Quests
                         p In 2013 started short-courses in frontend and self taught code with Python, MySQL, Angularjs, MongoDB.
                         p In the second semester of 2015 started a Master degree in Strategic and Innovation Design, but had to close to move to Japan.
                         p 2016 to 2018 lived in Japan working together diferents Cultural Centers.
-                        p In 2016 started to self taught photography and videomaking.
+                        p.text-color In 2016 started to self taught photography and videomaking.
                         p From 2019 working also as Flamenco Dancer in the hotels of Mallorca, Spain.
             section.section-base.experience
                 .experience-text
                     h2.main__title Professional Experience
                     .experience-text__first
-                        h3.main__description As Frontend Developer since 2013
+                        h3.main__description Since 2013
                         p Worked at the brazilian startup Mendelics for 2 years, 2013 and 2014, as graphic designer/art director and webdesigner/frontend developer.
-                        p In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica.
+                        p.text-color In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica.
                         p In April of 2019 moved to Palma de Mallorca where is now based, working as freelancer frontend.
                         p From 2019 started to learn and developing with Vue.js.
                         p Tools: HTML/Pug, CSS/Sass, JavaScript, GSAP, Gulp, Git. Basic in: Python, Vue.js, graphQL, MongoDB.
@@ -75,7 +86,9 @@ html(lang="en")
                 h2.main__title Github Profile 
                 h3.main__description Code Projects
                 .github-profile
+
         footer.section-base.footer
+            .footer-text
                 h2.main__title Contact
                 h3.main__description Leave me a message
                 a(href="mailto:anaclaulp@gmail.com") anaclaulp@gmail.com

@@ -1,0 +1,35 @@
+
+// 
+// CIRCLE TO CHANGE PROFESSION
+// 
+.viewer-circle {
+    @include circle-base();
+    width: 80px;
+    height: 80px;
+    background-color: $purple-color;
+    transition: all .3s;
+    cursor: pointer;
+    position: fixed;
+    right: 10%;
+    bottom: 15%;
+    z-index: 999;
+    &__text--videomaker{
+        visibility: hidden;
+    }
+    &:hover {
+        background-color: $orange-color;
+        .viewer-circle__text--frontend{
+            visibility: hidden;
+        }
+        .viewer-circle__text--videomaker{
+            visibility: visible;
+        }
+    }
+    &__text {
+        color: $primary-color;
+        font-family: $sans-serif--regular;
+        font-size: 1rem;
+        position: absolute;
+        @include object-center();
+    }
+}

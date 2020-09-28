@@ -1,0 +1,124 @@
+
+// 
+// GLOBAL
+// 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1.2;
+}
+body {
+    font-family: $sans-serif--regular ;
+    color: $primary-color;
+}
+a{
+    color: $primary-color;
+    text-decoration: none;
+    display: block;
+    margin-bottom: .8rem;
+    position: relative;
+    &:hover {
+        color: $red-color;
+    }
+    &::after{
+        content: '';
+        width: 50px;
+        height: 10px;
+        border-bottom: $orange-color 2px solid;
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        transform: translateY(15px);
+        opacity: 0;
+        transition: all .2s;
+    }
+    &:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+:focus {
+     outline: 5px solid $red-color;
+     outline-offset: 2px;
+}
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 8px $red-color;
+}
+.section-base {
+    padding-bottom: 2rem;
+
+}
+.button-plus {
+    background-color: #fff;
+    border: $purple-color 4px solid;
+    color: $purple-color;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+    margin: 0 auto;
+    display: block;
+    margin-top: 1.5rem;
+    position: relative;
+    transition: all .4s;
+    &::after {
+        content: 'more';
+        color: $purple-color;
+        font-size: 1rem;
+        position: absolute;
+        @include object-center();
+        top: auto;
+        bottom: -20px;
+        opacity: 0;
+        transition: all .3s;
+    }
+    &:hover{
+        transform: scale(1.2);
+        &::after {
+            bottom: -35px;
+            opacity: 1;
+        }
+    }
+}
+p{
+    margin-bottom: .8rem;
+    &:last-child {
+        margin-bottom: 0;;
+    }
+}
+.main__title {
+    font-size: 1rem;
+}
+.main__description {
+    font-family: $display-slab--bolditalic;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    position: relative;
+    &::after {
+        content: '';
+        border-bottom: $purple-color 3px solid;
+        border-left: $purple-color 3px solid;
+        width: 100px;
+        height: 110px;
+        display: block;
+        position: absolute;
+        bottom: -.5rem;
+        left: -.5rem;
+    }
+}
+.circle-image {
+    border-radius: 50%;
+    width: 90%;
+    height: auto;
+}
+.text-color {
+    background-color: $purple-color;
+    font-family: $sans-serif--bold;
+    padding: .5rem;
+    color: white;
+}

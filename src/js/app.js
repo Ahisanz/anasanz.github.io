@@ -19,10 +19,24 @@ function hideLoader() {
 }
 // hideLoader();
 
+const moreAbout = document.querySelector('.about-text__second');
+const buttonAboutPlus = document.querySelector('.button-about');
+
+buttonAboutPlus.addEventListener('click', () => {
+    if(moreAbout.style.display === 'none'){
+        moreAbout.style.display = 'block';
+        buttonAboutPlus.setAttribute('aria-expanded', 'true')
+    } else {
+        moreAbout.style.display = 'none';
+        buttonAboutPlus.setAttribute('aria-expanded', 'false')
+    }
+})
+
+
 function getUser() {
     axios.get('https://api.github.com/users/Ahisanz')
     .then(res => showProfile(res))
-    .catch(err => console.log(err))
+    .catch(err => showPreMade())
 };
 getUser();
 // show GitHub Profile
@@ -37,14 +51,55 @@ function showProfile(res) {
         <a href="${data.html_url}" class="github-profile__link">=> Github Profile</a>
         <a href="https://github.com/Ahisanz/anasanz.github.io" class="github-profile__link">=> Github Website Repository</a>
         <a href="https://github.com/Ahisanz/side_projects" class="github-profile__link">=> Github Basics Projects Repository</a>
-        <p class="github-profile__hirable" ></p>
     </div>
     `
-    if(data.hirable = true){
-        document.querySelector('.github-profile__hirable').innerHTML = 'Hirable';
-        document.querySelector('.github-profile__hirable').classList.add('hirable')
-
-    } else {
-        document.querySelector('.github-profile__hirable').innerHTML = 'Busy'
-    }
 }
+
+function showPreMade(){
+    document.querySelector('.github-profile').innerHTML = `
+    <div>
+        <img src="./images/photo-ana-2.jpg" class="github-profile__img circle-image" alt="Photo of Ana Sanz (me)"/>
+    </div>
+    <div>
+        <p class="github-profile__login">Ahisanz</p>
+        <a href="#" class="github-profile__link text-color">=> Github Profile</a>
+        <a href="https://github.com/Ahisanz/anasanz.github.io" class="github-profile__link">=> Github Website Repository</a>
+        <a href="https://github.com/Ahisanz/side_projects" class="github-profile__link">=> Github Basics Projects Repository</a>
+    </div>`
+}
+
+
+window.addEventListener('scroll', () => {
+    let value = window.scrollY;
+
+    
+
+    const mandala = document.querySelector('.about-image__icons--mandala');
+    const fireworks = document.querySelector('.about-image__icons--fireworks');
+    const sun = document.querySelector('.experience-image__icons--sun');
+    const rectangle = document.querySelector('.experience-image__icons--rectangle');
+    const headerGraf = document.querySelector('.header__image--grafismo');
+    const headerMM = document.querySelector('.header__image--maismenos');
+    const headerTuba = document.querySelector('.header__image--tuba');
+    const headerTrace = document.querySelector('.header__image--traco');
+
+    
+    // var valueBase = "calc(50% + " + value * 0.1 + "px)";
+
+    headerGraf.style.top = "calc(50% + " + value * 0.2 + "px)";
+    headerMM.style.top = "calc(50% + " + -value * 0.15 + "px)";
+    headerTuba.style.top = "calc(-12% + " + value * 0.1 + "px)";
+    headerTrace.style.top = "calc(50% + " + -value * 0.2 + "px)";
+    
+    mandala.style.bottom = "calc(-12% + " + value * -0.1 + "px)"
+    fireworks.style.top = "calc(-10px + " + value * -0.15 + "px)"
+    sun.style.bottom = "calc(5% + " + value * -0.1 + "px)"
+    rectangle.style.top = "calc(95% + " + value * -0.15 + "px)"
+
+    // mandala.style.bottom = -value * 0.15 + 'px';
+    // fireworks.style.top = -value * 0.1 + 'px';
+    // sun.style.bottom = -value * 0.07 + 'px';
+    // rectangle.style.top = value * 0.04 + 'px';
+
+
+})
