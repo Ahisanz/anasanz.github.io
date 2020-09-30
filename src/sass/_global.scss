@@ -91,14 +91,19 @@ p{
     }
 }
 .main__title {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    z-index: 3;
 }
 .main__description {
     font-family: $display-slab--bolditalic;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin-bottom: 2rem;
     padding-top: 2rem;
+    padding-left: 1rem;
+    line-height: 1;
     position: relative;
+    width: 260px;
+    z-index: 2;
     &::after {
         content: '';
         border-bottom: $purple-color 3px solid;
@@ -119,6 +124,7 @@ p{
 .text-color {
     background-color: $purple-color;
     font-family: $sans-serif--bold;
-    padding: .5rem;
+    padding: .5rem .5rem .5rem 3rem;
+    font-size: 1.2rem;
     color: white;
 }

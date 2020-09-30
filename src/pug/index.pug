@@ -11,19 +11,20 @@ html(lang="en")
         //-     p.viewer-circle__text.viewer-circle__text--frontend Frontend Developer
         //-     p.viewer-circle__text.viewer-circle__text--videomaker Videomaker
         header.section-base.header
-            .header__logo
-                img(src="./images/SVG/logo-vertical.svg",  alt="Ana Sanz Logo")
             .header__image
-                picture
-                    img.header__image--bg(src="./images/header/bg-allsmall.png", alt="", size="320px, 1024px", srcset="./images/header/bg-allsmall.png 640w, ./images/header/bg-all.png  1024w")    
+                figure.heager__figure
+                    img.header__image--bg(src="./images/header/bg-allsmall.png", alt="")
+                figure.header__figure
+                    img.header__image--bgbig(src="./images/header/bg-all.png") 
                 .header-parallax
                     img.header-parallax__img.header__image--grafismo(src="./images/header/grafis.png", alt="")    
                     img.header-parallax__img.header__image--maismenos(src="./images/header/maismenos.png", alt="")    
                     img.header-parallax__img.header__image--tuba(src="./images/header/tuba.png", alt="")    
                     img.header-parallax__img.header__image--traco(src="./images/header/traco.png", alt="")    
-                .header__text
-                    h1.header__subtitle Hello
-                    h2.header__title I'm Ana Sanz
+                    img.header__logo(src="./images/logo-white.png",  alt="Ana Sanz Logo")
+                //- .header__text
+                //-     h1.header__subtitle Hello
+                //-     h2.header__title I'm Ana Sanz
                 //- .header__text
                 //-     h2.header__subtitle Hello
                 //-     h1.header__title I'm Ana Sanz
@@ -46,7 +47,7 @@ html(lang="en")
                         p Living in Palma de Mallorca, Spain
                         p Self and quick learner, organized, versatile, curious and dedicated.
                         p Passionate about technology innovations, sci-fi, games, books, human history, ecology, gastronomy.
-                        p.text-color Since 2012 working as freelancer on Graphic/WebDesign and Frontend.
+                        p.text-color Since 2013 working as freelancer on Graphic/WebDesign and Frontend.
                         p Native brazilian portuguese, advanced english and spanish.
                         p College in Product Design at Belas Artes de São Paulo.
                     button.button-plus.button-about#button-moreabout( aria-expanded="false" aria-control="more-about") +
@@ -61,12 +62,14 @@ html(lang="en")
                 .experience-text
                     h2.main__title Professional Experience
                     .experience-text__first
-                        h3.main__description Since 2013
-                        p Worked at the brazilian startup Mendelics for 2 years, 2013 and 2014, as graphic designer/art director and webdesigner/frontend developer.
-                        p.text-color In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica.
-                        p In April of 2019 moved to Palma de Mallorca where is now based, working as freelancer frontend.
-                        p From 2019 started to learn and developing with Vue.js.
-                        p Tools: HTML/Pug, CSS/Sass, JavaScript, GSAP, Gulp, Git. Basic in: Python, Vue.js, graphQL, MongoDB.
+                        div.experience-text__container
+                            h3.main__description Since 2013
+                            p Worked at the brazilian startup Mendelics for 2 years, 2013 and 2014, as graphic designer/art director and webdesigner/frontend developer.
+                            p In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica.
+                            p In April of 2019 moved to Palma de Mallorca where is now based, working as freelancer frontend.
+                            p.text-color Keywords: Mobile First, Accessibility, Agile/Lean, BEM CSS, ES6, Responsive & Adaptative website, UX, Adobe Suite.
+                            p Tools: HTML/Pug, CSS/Sass, JavaScript, GSAP, Gulp, Git. Basic in: Python, Vue.js, graphQL, MongoDB.
+                            p From 2019 started to learn and developing with React.
                         .experience-image
                             img.circle-image.experience-image--frontend(src="./images/percusion-11.jpg" alt="")
                             img.experience-image__icons.experience-image__icons--sun(src="./images/SVG/bg-sun.svg", alt="Sun dots style icon")
@@ -91,6 +94,7 @@ html(lang="en")
             .footer-text
                 h2.main__title Contact
                 h3.main__description Leave me a message
+                p.text-color if you need anything!
                 a(href="mailto:anaclaulp@gmail.com") anaclaulp@gmail.com
                 p +34 695749730
                 a(href="https://linkedin.com/in/ana-claudia-sanz/") Linkedin

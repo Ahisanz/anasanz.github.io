@@ -2,17 +2,14 @@
 //  HEADER FEATURES
 //
 .header {
-  padding-top: 1.5rem;
+  padding-bottom: 0;
   &__logo {
     margin: 0 auto;
-    max-width: 100%;
-    margin-bottom: 2rem;
-    img {
-      display: block;
-      width: 100px;
-      height: auto;
-      margin: 0 auto;
-    }
+    width: 90%;
+    position: absolute;
+    bottom: -52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   &__image {
     position: relative;
@@ -25,6 +22,10 @@
     // background-size: cover;
     &--bg {
         display: block;
+        width: 100%;
+    }
+    &--bgbig {
+      display: none;
     }
     &--grafismo {
       width: 90%;
@@ -74,6 +75,8 @@
 // ABOUT SECTION FEATURES
 //
 .about {
+  overflow: hidden;
+  padding-top: 1.5rem;
   &-image {
     max-width: 100%;
     height: auto;
@@ -112,6 +115,7 @@
 .experience {
   background-color: $red-color;
   color: #fff;
+  overflow: hidden;
   &-text {
     max-width: 90%;
     margin: 0 auto 2rem auto;
@@ -174,14 +178,10 @@
   margin: 0 auto;
   padding-top: 2rem;
   &-profile {
-    &__hirable {
-      &.hirable {
-        color: $green-color;
-      }
-    }
     &__img {
       margin: 0 auto;
       display: block;
+      padding-bottom: 1.5rem;
     }
   }
   .text-color {
@@ -208,5 +208,9 @@
   .main__description::after {
     border-bottom: #000 3px solid;
     border-left: #000 3px solid;
+  }
+  .text-color {
+    background-color: #fff;
+    color: #000;
   }
 }

@@ -72,8 +72,6 @@ function showPreMade(){
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
 
-    
-
     const mandala = document.querySelector('.about-image__icons--mandala');
     const fireworks = document.querySelector('.about-image__icons--fireworks');
     const sun = document.querySelector('.experience-image__icons--sun');
@@ -83,9 +81,6 @@ window.addEventListener('scroll', () => {
     const headerTuba = document.querySelector('.header__image--tuba');
     const headerTrace = document.querySelector('.header__image--traco');
 
-    
-    // var valueBase = "calc(50% + " + value * 0.1 + "px)";
-
     headerGraf.style.top = "calc(50% + " + value * 0.2 + "px)";
     headerMM.style.top = "calc(50% + " + -value * 0.15 + "px)";
     headerTuba.style.top = "calc(-12% + " + value * 0.1 + "px)";
@@ -93,13 +88,7 @@ window.addEventListener('scroll', () => {
     
     mandala.style.bottom = "calc(-12% + " + value * -0.1 + "px)"
     fireworks.style.top = "calc(-10px + " + value * -0.15 + "px)"
-    sun.style.bottom = "calc(5% + " + value * -0.1 + "px)"
-    rectangle.style.top = "calc(95% + " + value * -0.15 + "px)"
-
-    // mandala.style.bottom = -value * 0.15 + 'px';
-    // fireworks.style.top = -value * 0.1 + 'px';
-    // sun.style.bottom = -value * 0.07 + 'px';
-    // rectangle.style.top = value * 0.04 + 'px';
-
+    sun.style.bottom = "calc(35% + " + value * -0.1 + "px)"
+    rectangle.style.top = "calc(130% + " + value * -0.15 + "px)"
 
 })

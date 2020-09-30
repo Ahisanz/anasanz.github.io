@@ -28,7 +28,7 @@
     text-align: center;
   }
   .main__description {
-    text-align: center;
+
   }
   .header {
     &__text {
@@ -42,22 +42,162 @@
   }
   .about {
     &-text {
-      width: 70%;
+      max-width: 70%;
     }
   }
   .experience {
     &-text {
-      width: 70%;
+      max-width: 70%;
     }
   }
   .github {
-    width: 70%;
+    max-width: 70%;
     &-profile {
-        text-align: center;
+        // text-align: center;
+    }
+    .circle-image {
+      width: 300px;
     }
   }
   .footer-text {
-    width: 70%;
-    text-align: center;
+    max-width: 70%;
+
+  }
+}
+@media (min-width: 768px) {
+  .section-base {
+    padding-bottom: 5rem;
+  }
+  .header {
+    padding-bottom: 0;
+  }
+  .header__image {
+    &--bg {
+      display: none;
+    }
+    &--bgbig {
+      display: block;
+      width: 100%;
+    }
+    &--grafismo {
+      width: 52%;
+    }
+    &--maismenos {
+      width: 60%;
+    }
+    &--tuba {
+      width: 55%;
+      left:15%;
+    }
+    &--traco{
+      width: 30%;
+    }
+  }
+  .header__logo {
+    width: 33%;
+    bottom: 31%;
+    left: 82%;
+  }
+  .header-parallax__img {
+    
+  }
+  .button-about {
+    display: none;
+  }
+  .about {
+    padding-top: 5rem;
+  }
+  .about-image {
+    width: 550px;
+    display: block;
+    margin: 0 auto;
+  }
+  .about-text {
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+  }
+  .about-text__second {
+    display: block!important;
+    padding-left: 3rem;
+    align-self: flex-end;
+    .main__description {
+      text-align: right;
+      display: block;
+      margin: 0 .5rem 2rem auto;
+      &::after {
+        border-left: none ;
+        border-right: #99789E 3px solid;
+        left: auto;
+        right: -1rem;
+      }
+    }
+  }
+  .experience {
+    &-text {
+      max-width: 80%;
+      padding-top: 5rem;
+      &__container {
+        width: 60%;
+      }
+    }
+    &__first {
+      position: relative;
+      
+    }
+    .text-color {
+      position: absolute;
+      width: 250px;
+      right: 5%;
+    }
+    &-image {
+      width: 550px;
+    }
+  }
+  .github {
+    max-width: 80%;
+    padding-top: 5rem;
+    &-profile {
+        // text-align: center;
+    }
+  }
+  .footer {
+    padding-top: 5rem;
+  }
+  .footer-text {
+    max-width: 80%;
+    position: relative;
+    .text-color {
+      position: absolute;
+      left: 35%;
+      top: 25%;
+      width: 150px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-text {
+    max-width: 960px;
+  }
+
+  .github {
+    max-width: 960px;
+  }
+  .experience-text {
+    max-width: 960px;
+  }
+  .about-text {
+    max-width:  960px;
+  }
+  .about-text__second {
+    padding-left: 12rem;
+  }
+  .experience-text__container {
+    width: 45%;
+  }
+  .experience .text-color {
+    right: 20%;
+    width: 300px;
   }
 }
