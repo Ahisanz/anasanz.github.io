@@ -7,9 +7,6 @@ html(lang="en")
         link(rel="stylesheet", href="css/style.css")
         title Ana Sanz | WebPortfolio
     body
-        //- .viewer-circle 
-        //-     p.viewer-circle__text.viewer-circle__text--frontend Frontend Developer
-        //-     p.viewer-circle__text.viewer-circle__text--videomaker Videomaker
         header.section-base.header
             .header__image
                 figure.heager__figure
@@ -22,17 +19,6 @@ html(lang="en")
                     img.header-parallax__img.header__image--tuba(src="./images/header/tuba.png", alt="")    
                     img.header-parallax__img.header__image--traco(src="./images/header/traco.png", alt="")    
                     img.header__logo(src="./images/logo-white.png",  alt="Ana Sanz Logo")
-                //- .header__text
-                //-     h1.header__subtitle Hello
-                //-     h2.header__title I'm Ana Sanz
-                //- .header__text
-                //-     h2.header__subtitle Hello
-                //-     h1.header__title I'm Ana Sanz
-                  
-                //- picture
-                //-  img(src="./images/bg-opening2small.png", alt="Flamenco dancer with red dress", 
-                //-  size="320px, 1024px",
-                //-  srcset="./images/bg-opening2small.png 640w, ./images/bg-opening2.png  1024w")
         main.section-base.main
             //- section.section-base.path
             //-     img.path__image.path__image--saopaulo(src="./images/SVG/saopaulo_icon.svg", alt="")
@@ -73,10 +59,9 @@ html(lang="en")
                         div.experience-text__container
                             h3.main__description Since 2013
                             p Worked at the brazilian startup Mendelics for 2 years, 2013 and 2014, as graphic designer/art director and webdesigner/frontend developer.
-                            p In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica(<a class="experience-text__link" href="https://o2online.es/"> especially with O2</a>).
+                            p In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica(<a class="experience-text__link" href="https://o2online.es/">especially with O2</a>).
                             p In April of 2019 moved to Palma de Mallorca where is now based, working as freelancer frontend.
                             p.text-color Keywords: Mobile First, Accessibility, Agile/Lean, BEM CSS, ES6, Responsive & Adaptative website, UX, Adobe Suite.
-                            p From 2019 started to learn and developing with React.
                         .experience-image
                             img.circle-image.experience-image--frontend(src="./images/percusion-11.jpg" alt="")
                             img.experience-image__icons.experience-image__icons--sun(src="./images/SVG/bg-sun.svg", alt="Sun dots style icon")
@@ -86,9 +71,24 @@ html(lang="en")
                 .projects-text
                     h2.main__title  Projects
                     h3.main__description Code Projects
+                    p.projects-text-color.text-color here are some projects, besides the big corporations that I worked to
                 ul.projects-list
                     li.projects-list__item
-                        //- img(src="./images/captura2.png", alt="")
+                        a.projects-list__link(href="https://github.com/Ahisanz/side_projects")
+                            img(src="./images/captura2.png", alt="" class="projects-list__image circle-image")
+                            p.projects-list__text Basics Side Projects
+                    li.projects-list__item
+                        a.projects-list__link(href="https://github.com/Ahisanz/side_projects")
+                            img(src="./images/captura2.png", alt="" class="projects-list__image circle-image")
+                            p.projects-list__text Basics Side Projects
+                    li.projects-list__item
+                        a.projects-list__link(href="https://github.com/Ahisanz/side_projects")
+                            img(src="./images/captura2.png", alt="" class="projects-list__image circle-image")
+                            p.projects-list__text Basics Side Projects
+                    li.projects-list__item
+                        a.projects-list__link(href="https://github.com/Ahisanz/side_projects")
+                            img(src="./images/captura2.png", alt="" class="projects-list__image circle-image")
+                            p.projects-list__text Basics Side Projects
 
         footer.section-base.footer
             .footer-text

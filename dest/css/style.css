@@ -276,6 +276,8 @@ p {
       .experience-text__link::after {
         content: '';
         border-bottom: none; }
+    .experience-text__container {
+      position: relative; }
   .experience-image {
     position: relative;
     margin: 0 auto;
@@ -314,12 +316,42 @@ p {
     color: #F9AF77;
     background-color: #fff; }
 
-.projects-text {
-  margin: 0 auto;
-  max-width: 90%; }
-
-.projects .main__description::after {
-  border-color: #57CBF5; }
+.projects {
+  padding-top: 2.5rem; }
+  .projects-text {
+    margin: 0 auto 5rem auto;
+    max-width: 90%;
+    position: relative; }
+    .projects-text-color {
+      background-color: #57CBF5; }
+  .projects-list {
+    max-width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem; }
+    .projects-list__item {
+      position: relative; }
+    .projects-list__link::after {
+      border-bottom: none; }
+    .projects-list__link:hover .projects-list__image {
+      transform: scale(1.2); }
+    .projects-list__image {
+      display: block;
+      margin: 0 auto;
+      transition: all .3s; }
+    .projects-list__text {
+      font-family: "Noah-Bold";
+      font-size: 1.5rem;
+      text-align: center;
+      max-width: 150px;
+      position: absolute;
+      color: #57CBF5;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .projects .main__description::after {
+    border-color: #57CBF5; }
 
 .footer {
   background-color: #FFE65E;
@@ -361,6 +393,8 @@ p {
     max-width: 70%; }
   .experience-text {
     max-width: 70%; }
+  .projects-list {
+    grid-template-columns: 1fr 1fr; }
   .projects-text {
     max-width: 70%; }
     .projects-text .circle-image {
@@ -426,12 +460,18 @@ p {
   .experience .text-color {
     position: absolute;
     width: 250px;
-    right: 5%; }
+    right: -85%;
+    bottom: -17%; }
   .experience-image {
     width: 550px; }
   .projects-text {
     max-width: 80%;
     padding-top: 5rem; }
+    .projects-text-color {
+      position: absolute;
+      width: 300px;
+      bottom: 10%;
+      right: 5%; }
   .footer {
     padding-top: 5rem; }
   .footer-text {
@@ -457,5 +497,4 @@ p {
   .experience-text__container {
     width: 45%; }
   .experience .text-color {
-    right: 20%;
     width: 300px; } }
