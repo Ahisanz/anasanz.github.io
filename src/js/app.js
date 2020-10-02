@@ -33,42 +33,6 @@ buttonAboutPlus.addEventListener('click', () => {
 })
 
 
-function getUser() {
-    axios.get('https://api.github.com/users/Ahisanz')
-    .then(res => showProfile(res))
-    .catch(err => showPreMade())
-};
-getUser();
-// show GitHub Profile
-function showProfile(res) {
-    const data = res.data;
-    document.querySelector('.github-profile').innerHTML = `
-    <div>
-        <img src="${data.avatar_url}" class="github-profile__img circle-image" alt="Photo of Ana Sanz (me)"/>
-    </div>
-    <div>
-        <p class="github-profile__login">${data.login}</p>
-        <a href="${data.html_url}" class="github-profile__link">=> Github Profile</a>
-        <a href="https://github.com/Ahisanz/anasanz.github.io" class="github-profile__link">=> Github Website Repository</a>
-        <a href="https://github.com/Ahisanz/side_projects" class="github-profile__link">=> Github Basics Projects Repository</a>
-    </div>
-    `
-}
-
-function showPreMade(){
-    document.querySelector('.github-profile').innerHTML = `
-    <div>
-        <img src="./images/photo-ana-2.jpg" class="github-profile__img circle-image" alt="Photo of Ana Sanz (me)"/>
-    </div>
-    <div>
-        <p class="github-profile__login">Ahisanz</p>
-        <a href="#" class="github-profile__link text-color">=> Github Profile</a>
-        <a href="https://github.com/Ahisanz/anasanz.github.io" class="github-profile__link">=> Github Website Repository</a>
-        <a href="https://github.com/Ahisanz/side_projects" class="github-profile__link">=> Github Basics Projects Repository</a>
-    </div>`
-}
-
-
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
 

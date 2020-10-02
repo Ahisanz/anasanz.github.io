@@ -34,6 +34,12 @@ html(lang="en")
                 //-  size="320px, 1024px",
                 //-  srcset="./images/bg-opening2small.png 640w, ./images/bg-opening2.png  1024w")
         main.section-base.main
+            //- section.section-base.path
+            //-     img.path__image.path__image--saopaulo(src="./images/SVG/saopaulo_icon.svg", alt="")
+            //-     img.path__image.path__image--japan(src="./images/SVG/japan_icon.svg", alt="")
+            //-     img.path__image.path__image--spain(src="./images/SVG/spain_icon.svg", alt="")
+            //-     img.path__image.path__image--portugal(src="./images/SVG/portugal_icon.svg", alt="")
+
             section.section-base.about
                 .about-image
                     img.circle-image.about-image__img(src="./images/ana-sanz-photo.jpg", alt="Ana Sanz Photo (me)")
@@ -43,21 +49,23 @@ html(lang="en")
                     .about-text__first 
                         h2.main__title About me
                         h3.main__description Frontend Developer 
-                        p 28 years old, brazilian/spanish.
-                        p Living in Palma de Mallorca, Spain
-                        p Self and quick learner, organized, versatile, curious and dedicated.
-                        p Passionate about technology innovations, sci-fi, games, books, human history, ecology, gastronomy.
-                        p.text-color Since 2013 working as freelancer on Graphic/WebDesign and Frontend.
-                        p Native brazilian portuguese, advanced english and spanish.
-                        p College in Product Design at Belas Artes de São Paulo.
+                        p.text-color 5 years of experience, based in Palma de Mallorca, Spain.
+                        p I'm a multidisciplinary person, organized, self-taught, versatile, adaptible and detail-oriented. 
+                        p I have experience working in different places, Brazil, Japan, and Spain, and with different types of companies, startups, and agencies.
+                        p Passionate about technology, books, innovatiosn, sci-fi, games, human history, ecology, and gastronomy.
+                        p Speaker of 3 languagues: English, Spanish and Portuguese.
+                        p I have expertise coding with: HTML/PUG, CSS/SASS, Javascript, Gulp, Git.
+                        p But I'm familiar with: Bootstrap, React, MongoDB, GraphQL, and Python.
+
                     button.button-plus.button-about#button-moreabout( aria-expanded="false" aria-control="more-about") +
                     .about-text__second#more-about(style="display: none" role="region" aria-labeledby="button-moreabout")
                         h3.main__description Side Quests
-                        p In 2013 started short-courses in frontend and self taught code with Python, MySQL, Angularjs, MongoDB.
-                        p In the second semester of 2015 started a Master degree in Strategic and Innovation Design, but had to close to move to Japan.
-                        p 2016 to 2018 lived in Japan working together diferents Cultural Centers.
-                        p.text-color In 2016 started to self taught photography and videomaking.
-                        p From 2019 working also as Flamenco Dancer in the hotels of Mallorca, Spain.
+                        p College graduation in Product Design at Belas Artes, in São Paulo, Brazil.
+                        p I have 5 years of experience as Graphic/ Webdesigner, 
+                        p And 3 years working as Photographer/ Videographer (working with musicians and dancers).
+                        p So, the tools I use are: Illustrator, Photoshop, Premiere Pro, After Effects, DaVinci Resolve, and Lightroom.
+                        p Oh, I'm also a Flamenco dancer, and in 2019-2020 I have been working in a company in Mallorca, Spain.
+
             section.section-base.experience
                 .experience-text
                     h2.main__title Professional Experience
@@ -65,30 +73,22 @@ html(lang="en")
                         div.experience-text__container
                             h3.main__description Since 2013
                             p Worked at the brazilian startup Mendelics for 2 years, 2013 and 2014, as graphic designer/art director and webdesigner/frontend developer.
-                            p In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica.
+                            p In mid 2018 started work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica(<a class="experience-text__link" href="https://o2online.es/"> especially with O2</a>).
                             p In April of 2019 moved to Palma de Mallorca where is now based, working as freelancer frontend.
                             p.text-color Keywords: Mobile First, Accessibility, Agile/Lean, BEM CSS, ES6, Responsive & Adaptative website, UX, Adobe Suite.
-                            p Tools: HTML/Pug, CSS/Sass, JavaScript, GSAP, Gulp, Git. Basic in: Python, Vue.js, graphQL, MongoDB.
                             p From 2019 started to learn and developing with React.
                         .experience-image
                             img.circle-image.experience-image--frontend(src="./images/percusion-11.jpg" alt="")
                             img.experience-image__icons.experience-image__icons--sun(src="./images/SVG/bg-sun.svg", alt="Sun dots style icon")
                             img.experience-image__icons.experience-image__icons--rectangle(src="./images/SVG/bg-rectangle.svg", alt="Rectangle dots style icon")
-                    .experience-text__second
-                        h3.main__description As Videomaker since 2016
-                        p In Japan, worked from 2016 to early 2017, at Tiempo Iberoamericano with video editing and filming, photography. 
-                        p And from 2017 to early 2018 at Flamenco Studio Los Lunares with video editing and filming, photography and design.
-                        p In 2018 moved to Spain and started to work with musicians and dancers with photography and videographer.
-                        p In 2019 started to work as photographer and videomaker at Triana Productions, flamenco music and dance company.
-                        p Tools: Illustrator, Photoshop, InDesign, Premiere Pro, After Effects, DaVinci Resolve, Lightroom.
-                        .experience-image
-                            img.circle-image.experience-image--frontend(src="./images/sakura-14.jpg" alt="")
-                            img.experience-image__icons.experience-image__icons--flower(src="./images/SVG/bg-flower.svg", alt="Flower dots style icon")
-                            img.experience-image__icons.experience-image__icons--music(src="./images/SVG/bg-music.svg", alt="music dots style icon")
-            section.section-base.github
-                h2.main__title Github Profile 
-                h3.main__description Code Projects
-                .github-profile
+                   
+            section.section-base.projects
+                .projects-text
+                    h2.main__title  Projects
+                    h3.main__description Code Projects
+                ul.projects-list
+                    li.projects-list__item
+                        //- img(src="./images/captura2.png", alt="")
 
         footer.section-base.footer
             .footer-text
@@ -99,7 +99,6 @@ html(lang="en")
                 p +34 695749730
                 a(href="https://linkedin.com/in/ana-claudia-sanz/") Linkedin
                 a(href="https://landing.jobs/profile/2e3cb6703e48a889148669") Landing.jobs
-
         //- section.loader
             img(src="./images/SVG/logo-vertical.svg" alt="Ana Sanz Logo").loader__image.loader__image--logo
             img(src="./images/SVG/bg-flower.svg" alt="Flower dots style icon").loader__image.loader__bgimage.loader__bgimage--flower

@@ -70,6 +70,22 @@
     font-size: 1.5rem;
   }
 }
+//
+// PATH SECTION FEATURES
+// 
+.path {
+  padding-top: 2.5rem;
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  &__image {
+    flex: 0 40%;
+    margin: 0 auto;
+    display: inline-block;
+  }
+}
+
 
 //
 // ABOUT SECTION FEATURES
@@ -123,6 +139,17 @@
     &__second {
       display: none;
     }
+    &__link {
+      color: white;
+      display: inline;
+      &:hover {
+        color: #000;
+      }
+      &::after {
+        content: '';
+        border-bottom: none;
+      }
+    }
   }
   &-image {
     position: relative;
@@ -171,29 +198,17 @@
 }
 
 //
-// GITHUB PROFILE
+// Projects PROFILE
 //
-.github {
-  max-width: 90%;
-  margin: 0 auto;
-  padding-top: 2rem;
-  &-profile {
-    &__img {
-      margin: 0 auto;
-      display: block;
-      padding-bottom: 1.5rem;
-    }
-  }
-  .text-color {
-    background-color: $blue-color;
-    color: #000;
+.projects {
+  &-text {
+    margin: 0 auto;
+    max-width: 90%;
   }
   .main__description::after {
-    border-bottom: $blue-color 3px solid;
-    border-left: $blue-color 3px solid;
+    border-color: $blue-color;
   }
 }
-
 //
 // FOOTER FEATURES
 //

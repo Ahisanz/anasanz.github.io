@@ -218,6 +218,17 @@ p {
   .header__subtitle {
     font-size: 1.5rem; }
 
+.path {
+  padding-top: 2.5rem;
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; }
+  .path__image {
+    flex: 0 40%;
+    margin: 0 auto;
+    display: inline-block; }
+
 .about {
   overflow: hidden;
   padding-top: 1.5rem; }
@@ -257,6 +268,14 @@ p {
     padding-top: 2rem; }
     .experience-text__second {
       display: none; }
+    .experience-text__link {
+      color: white;
+      display: inline; }
+      .experience-text__link:hover {
+        color: #000; }
+      .experience-text__link::after {
+        content: '';
+        border-bottom: none; }
   .experience-image {
     position: relative;
     margin: 0 auto;
@@ -295,20 +314,12 @@ p {
     color: #F9AF77;
     background-color: #fff; }
 
-.github {
-  max-width: 90%;
+.projects-text {
   margin: 0 auto;
-  padding-top: 2rem; }
-  .github-profile__img {
-    margin: 0 auto;
-    display: block;
-    padding-bottom: 1.5rem; }
-  .github .text-color {
-    background-color: #57CBF5;
-    color: #000; }
-  .github .main__description::after {
-    border-bottom: #57CBF5 3px solid;
-    border-left: #57CBF5 3px solid; }
+  max-width: 90%; }
+
+.projects .main__description::after {
+  border-color: #57CBF5; }
 
 .footer {
   background-color: #FFE65E;
@@ -350,9 +361,9 @@ p {
     max-width: 70%; }
   .experience-text {
     max-width: 70%; }
-  .github {
+  .projects-text {
     max-width: 70%; }
-    .github .circle-image {
+    .projects-text .circle-image {
       width: 300px; }
   .footer-text {
     max-width: 70%; } }
@@ -418,7 +429,7 @@ p {
     right: 5%; }
   .experience-image {
     width: 550px; }
-  .github {
+  .projects-text {
     max-width: 80%;
     padding-top: 5rem; }
   .footer {
@@ -435,7 +446,7 @@ p {
 @media (min-width: 1024px) {
   .footer-text {
     max-width: 960px; }
-  .github {
+  .projects-text {
     max-width: 960px; }
   .experience-text {
     max-width: 960px; }
