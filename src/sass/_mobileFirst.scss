@@ -263,6 +263,21 @@
     margin: 0 auto;
     max-width: 90%;
     display: block;
+    &__image {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+    &__link {
+      display: block;
+      height: 80px;
+      width: 80px;
+      margin-left: .5rem;
+    }
+    &__container {
+      display: flex;
+      flex-direction: row;
+    }
   }
   .main__description::after {
     border-bottom: #000 3px solid;
@@ -271,5 +286,29 @@
   .text-color {
     background-color: #fff;
     color: #000;
+  }
+  .cls-1{ 
+    fill:none; 
+    stroke:#1d1d1b;
+    stroke-linecap:square; 
+    stroke-miterlimit:10; 
+    stroke-width:5px; 
+    stroke-dasharray:0 13;
+    transition: all .3s;
+  }
+  .cls-2{
+    fill:#1d1d1b;
+    transition: all .3s;
+  }
+  svg {
+    transition: all .3s;
+  }
+  a:hover {
+    svg, .cls-2 {
+      fill: $red-color
+    }
+    .cls-1 {
+      stroke: $red-color;
+    }
   }
 }
