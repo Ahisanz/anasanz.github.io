@@ -8,6 +8,9 @@ html(lang="en")
         title Ana Sanz | WebPortfolio
     body
         header.section-base.header
+            .header__text
+                h1.main__description coding with you for a better web
+
             .header__image
                 figure.heager__figure
                     img.header__image--bg(src="./images/header/bg-allsmall.png", alt="")
@@ -25,7 +28,27 @@ html(lang="en")
             //-     img.path__image.path__image--japan(src="./images/SVG/japan_icon.svg", alt="")
             //-     img.path__image.path__image--spain(src="./images/SVG/spain_icon.svg", alt="")
             //-     img.path__image.path__image--portugal(src="./images/SVG/portugal_icon.svg", alt="")
-
+            section.contact-me#contact__button
+                a(href="#contact"  class="contact-me__link") Contact
+            section.section-base.projects
+                .projects-text
+                    h2.main__title Portfolio
+                    h3.main__description Code Projects
+                    p.projects-text-color.text-color Here are some project that I worked with!
+                ul.projects-list
+                    li.projects-list__item
+                        a.projects-list__link(href="https://o2online.es/")
+                            img(src="./images/o2-website.png", alt="" class="projects-list__image circle-image")
+                            .projects-list__text
+                                p.projects-list__company Telefonica
+                                p.projects-list__project O2 Website
+                        
+                    li.projects-list__item
+                        a.projects-list__link(href="https://github.com/Ahisanz/new_old_website")
+                            img(src="./images/old-website.png", alt="" class="projects-list__image circle-image")
+                            .projects-list__text
+                                p.projects-list__company Ana Sanz
+                                p.projects-list__project Old Website
             section.section-base.about
                 .about-image
                     img.circle-image.about-image__img(src="./images/ana-sanz-photo.jpg", alt="Ana Sanz Photo (me)")
@@ -33,69 +56,39 @@ html(lang="en")
                     img.about-image__icons.about-image__icons--fireworks(src="./images/SVG/bg-fireworks.svg", alt="Fireworks dots style icon")
                 .about-text
                     .about-text__first 
-                        h2.main__title About me
-                        h3.main__description Building  Interaction Experiences 
+                        h2.main__title Hi, I'm Ana Sanz
+                        h3.main__description Versatile Coder
                         p.text-color Frontend developer with 5 years of experience, based in Palma de Mallorca, Spain.
                         p I'm a multidisciplinary person, organized, self-taught, versatile, adaptable and detail-oriented. 
                         p I have experience working in different places, Brazil, Japan, and Spain, and with different types of companies, startups, and agencies.
-                        p Passionate about technology, books, innovatiosn, sci-fi, games, human history, ecology, and gastronomy.
-                        p Speaker of 3 languagues: English, Spanish and Portuguese.
                         p I have expertise coding with: HTML/PUG, CSS/SASS, Javascript, Gulp, Git.
-                        p But I'm familiar with: Bootstrap, React, MongoDB, GraphQL, and Python.
-
-                    button.button-plus.button-about#button-moreabout( aria-expanded="false" aria-control="more-about") +
-                    .about-text__second#more-about(style="display: none" role="region" aria-labeledby="button-moreabout")
-                        h3.main__description Side Quests
-                        p College graduation in Product Design at Belas Artes, in São Paulo, Brazil.
-                        p I have 5 years of experience as Graphic/ Webdesigner, 
-                        p And 3 years working as Photographer/ Videographer (working with musicians and dancers).
-                        p So, the tools I use are: Illustrator, Photoshop, Premiere Pro, After Effects, DaVinci Resolve, and Lightroom.
-                        p Oh, I'm also a Flamenco dancer, and in 2019-2020 I have been working in a company in Mallorca, Spain.
+                        p Passionate about technology, books, innovatiosn, sci-fi, games, human history, ecology, and gastronomy.
 
             section.section-base.experience
+                h2.main__title Professional
                 .experience-text
-                    h2.main__title Professional Experience
                     .experience-text__first
                         div.experience-text__container
-                            h3.main__description It all started in 2013...
-                            p I worked at the brazilian startup Mendelics for 2 years, as graphic designer and webdesigner/frontend developer.
-                            p In 2016 and 2017 I worked with Cultural Centers in Japan, Tiempo and Los Lunares, as designer/videomaker and Frontend developer.
-                            p In mid 2018 I started to work in Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica(<a class="experience-text__link" href="https://o2online.es/">especially with O2</a>).
-                            p And in April of 2019 I moved to Palma de Mallorca where I'm now based, working as freelancer frontend.
-                            p.text-color Keywords: Website Optimization, Mobile First, Accessibility, BEM CSS, ES6, Responsive & Adaptative website.
+                            h3.main__description Highlights
+                            p I worked at the brazilian startup Mendelics for 2 years, as graphic designer and frontend developer.
+                            p In Madrid as front-end developer at Prodigious Spain, with great companies like Mercedes, Garnier and Telefonica(<a class="experience-text__link" href="https://o2online.es/">especially with O2</a>).
+                            p.text-color Fundamentals: Website Optimization, Mobile First, Accessibility, BEM CSS, Responsive & Adaptative website.
+                        button.button-plus.button-about#button-moreabout( aria-expanded="false" aria-control="more-about") +
+                        .experience-text__second#more-about(style="display: none" role="region" aria-labeledby="button-moreabout")
+                            h3.main__description Other Stuff
+                            p I have 5 years of experience as Graphic/ Webdesigner, 
+                            p And 3 years working as Photographer/ Videographer (working with musicians and dancers).
+                            p Oh, I'm also a Flamenco dancer, and in 2019-2020 I have been working in a company in Mallorca, Spain.
                         .experience-image
                             img.circle-image.experience-image--frontend(src="./images/percusion-11.jpg" alt="")
                             img.experience-image__icons.experience-image__icons--sun(src="./images/SVG/bg-sun.svg", alt="Sun dots style icon")
                             img.experience-image__icons.experience-image__icons--rectangle(src="./images/SVG/bg-rectangle.svg", alt="Rectangle dots style icon")
-                   
-            section.section-base.projects
-                .projects-text
-                    h2.main__title  Projects
-                    h3.main__description Code Projects
-                    p.projects-text-color.text-color Here are some project that I worked with!
-                ul.projects-list
-                    li.projects-list__item
-                        a.projects-list__link(href="https://github.com/Ahisanz/side_projects")
-                            img(src="./images/captura2.png", alt="" class="projects-list__image circle-image")
-                            p.projects-list__text Basics Side Projects
-                    li.projects-list__item
-                        a.projects-list__link(href="https://github.com/Ahisanz/side_projects")
-                            img(src="./images/captura2.png", alt="" class="projects-list__image circle-image")
-                            p.projects-list__text Basics Side Projects
-                    li.projects-list__item
-                        a.projects-list__link(href="https://github.com/Ahisanz/side_projects")
-                            img(src="./images/captura2.png", alt="" class="projects-list__image circle-image")
-                            p.projects-list__text Basics Side Projects
-                    li.projects-list__item
-                        a.projects-list__link(href="https://github.com/Ahisanz/side_projects")
-                            img(src="./images/captura2.png", alt="" class="projects-list__image circle-image")
-                            p.projects-list__text Basics Side Projects
 
-        footer.section-base.footer
+        footer.section-base.footer#contact
             .footer-text
                 h2.main__title Contact
                 h3.main__description Leave me a message
-                p.text-color if you need anything!
+                p.text-color Hope we can work together!
                 //- a(href="mailto:anaclaulp@gmail.com") anaclaulp@gmail.com
                 //- p +34 695749730
                 //- a(href="https://linkedin.com/in/ana-claudia-sanz/") Linkedin

@@ -54,8 +54,8 @@ button:focus {
 }
 .button-plus {
     background-color: #fff;
-    border: $purple-color 4px solid;
-    color: $purple-color;
+    border: $orange-color 4px solid;
+    color: $orange-color;
     border-radius: 50%;
     width: 45px;
     height: 45px;
@@ -67,7 +67,7 @@ button:focus {
     transition: all .4s;
     &::after {
         content: 'more';
-        color: $purple-color;
+        color: $orange-color;
         font-size: 1rem;
         position: absolute;
         @include object-center();
@@ -96,7 +96,7 @@ p{
 }
 .main__description {
     font-family: $display-slab--bolditalic;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 2rem;
     padding-top: 2rem;
     padding-left: 1rem;
@@ -109,7 +109,7 @@ p{
         border-bottom: $purple-color 3px solid;
         border-left: $purple-color 3px solid;
         width: 100px;
-        height: 110px;
+        height: 60px;
         display: block;
         position: absolute;
         bottom: -.5rem;

@@ -19,7 +19,29 @@ function hideLoader() {
 }
 // hideLoader();
 
-const moreAbout = document.querySelector('.about-text__second');
+
+
+const contact = document.querySelector('#contact');
+const contactButton = document.querySelector('#contact__button');
+// const options = {
+//     rootMargin: '-200px'
+// }
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+            contactButton.classList.add('hide');
+        } else {
+            contactButton.classList.remove('hide');
+        }
+    })
+})
+
+observer.observe(contact)
+
+
+
+const moreAbout = document.querySelector('.experience-text__second');
 const buttonAboutPlus = document.querySelector('.button-about');
 
 buttonAboutPlus.addEventListener('click', () => {
@@ -50,8 +72,8 @@ window.addEventListener('scroll', () => {
     headerTuba.style.top = "calc(-12% + " + value * 0.1 + "px)";
     headerTrace.style.top = "calc(50% + " + -value * 0.2 + "px)";
     
-    mandala.style.bottom = "calc(-12% + " + value * -0.1 + "px)"
-    fireworks.style.top = "calc(-10px + " + value * -0.15 + "px)"
+    mandala.style.bottom = "calc(10% + " + value * -0.1 + "px)"
+    fireworks.style.top = "calc(40% + " + value * -0.15 + "px)"
     sun.style.bottom = "calc(35% + " + value * -0.1 + "px)"
     rectangle.style.top = "calc(130% + " + value * -0.15 + "px)"
 

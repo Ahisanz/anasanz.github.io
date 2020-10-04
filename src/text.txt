@@ -1,0 +1,7 @@
+p Speaker of 3 languagues: English, Spanish and Portuguese.
+p I have expertise coding with: HTML/PUG, CSS/SASS, Javascript, Gulp, Git.
+p But I'm familiar with: Bootstrap, React, MongoDB, GraphQL, and Python.
+p So, the tools I use are: Illustrator, Photoshop, Premiere Pro, After Effects, DaVinci Resolve, and Lightroom.
+p College graduation in Product Design at Belas Artes, in São Paulo, Brazil.
+                            p And in April of 2019 I moved to Palma de Mallorca where I'm now based, working as freelancer frontend.
+                                                        p In 2016 and 2017 I worked with Cultural Centers in Japan, Tiempo and Los Lunares, as designer/videomaker and Frontend developer.

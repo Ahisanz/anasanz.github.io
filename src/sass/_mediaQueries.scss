@@ -2,9 +2,9 @@
 // 420PX
 //
 @media (min-width: 420px) {
-  .header__text {
-    bottom: 45%;
-  }
+  // .header__text {
+  //   bottom: 45%;
+  // }
   .circle-image {
     width: 70%;
   }
@@ -32,10 +32,10 @@
 
   }
   .header {
-    &__text {
-      bottom: 55%;
-      left: 15%; 
-    }
+    // &__text {
+    //   bottom: 55%;
+    //   left: 15%; 
+    // }
   }
   .experience-image__icons,
   .about-image__icons {
@@ -97,10 +97,16 @@
       width: 30%;
     }
   }
+  .header__text {
+    .main__description {
+      font-size: 3.5rem;
+      width: 400px;
+    }
+  }
   .header__logo {
-    width: 33%;
-    bottom: 31%;
-    left: 82%;
+    width: 200px;
+    top: 5%;
+    right: 5%;
   }
   .header-parallax__img {
     
@@ -108,30 +114,34 @@
   .button-about {
     display: none;
   }
-  .about {
-    padding-top: 5rem;
-  }
+  // .about {
+  //   padding-top: 5rem;
+  // }
   .about-image {
     width: 550px;
     display: block;
     margin: 0 auto;
   }
-  .about-text {
-    display: flex;
-    align-items: center;
-    max-width: 80%;
+  .about-text__first {
+    width: 50%;
+    position: relative;
+    .text-color {
+      position: absolute;
+      right: -100%;
+     width: 300px;
+    }
   }
-  .about-text__second {
+  .experience-text__second {
     display: block!important;
-    padding-left: 3rem;
-    align-self: flex-end;
+    text-align: right;
+    max-width: 60%;
     .main__description {
       text-align: right;
       display: block;
       margin: 0 .5rem 2rem auto;
       &::after {
         border-left: none ;
-        border-right: #99789E 3px solid;
+        border-right: $orange-color 3px solid;
         left: auto;
         right: -1rem;
       }
@@ -139,8 +149,10 @@
   }
   .experience {
     &-text {
-      max-width: 80%;
-      padding-top: 5rem;
+      display: flex;
+      align-items: center;
+      max-width: 70%;
+      padding-top: 3rem;
       &__container {
         width: 60%;
       }
@@ -152,15 +164,15 @@
     .text-color {
       position: absolute;
       width: 250px;
-      right: -85%;
-      bottom: -17%;
+      right: -100%;
+      bottom: -45%;
     }
     &-image {
       width: 550px;
     }
   }
   .projects-text {
-    max-width: 80%;
+    max-width: 70%;
     padding-top: 5rem;
     &-profile {
         // text-align: center;
@@ -176,13 +188,13 @@
     padding-top: 5rem;
   }
   .footer-text {
-    max-width: 80%;
+    max-width: 70%;
     position: relative;
     .text-color {
       position: absolute;
-      left: 35%;
+      left: 50%;
       top: 25%;
-      width: 150px;
+      width: 200px;
     }
   }
 }
@@ -196,6 +208,9 @@
   }
   .experience-text {
     max-width: 960px;
+    .text-color {
+      right: -130%;
+    }
   }
   .about-text {
     max-width:  960px;
