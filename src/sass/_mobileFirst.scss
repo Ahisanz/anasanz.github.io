@@ -10,6 +10,7 @@
     position: absolute;
     top: 0%;
     right: 10%;
+    z-index: 999;
   }
   &__image {
     position: relative;
@@ -163,6 +164,11 @@
   // background-color: $red-color;
   // color: #fff;
   // overflow: hidden;
+  .main__title {
+    margin: 0 auto;
+    max-width: 90%;
+    display: block;
+  }
   &-text {
     max-width: 90%;
     margin: 0 auto 2rem auto;
